@@ -99,7 +99,7 @@
     <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
       <div class="row">
         <div class="col-lg-8">
-          <h1>Selamat Datang di <span>GO Catering</span></h1>
+          <h1>Selamat Datang di <span>Farhan Catering</span></h1>
           <h2>Menyediakan berbagai paket makanan</h2>
 
           <div class="btns">

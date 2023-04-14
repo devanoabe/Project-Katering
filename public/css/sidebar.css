@@ -1,0 +1,27 @@
+/* not active */
+.nav-pills .pill-1 .nav-link:not(.active) {
+    background-color: rgb(0, 0, 0);
+}
+
+.nav-pills .pill-2 .nav-link:not(.active) {
+    background-color: black;
+}
+
+.nav-pills .pill-3 .nav-link:not(.active) {
+    background-color: black;
+}
+
+
+/* active (faded) */
+.nav-pills .pill-1 .nav-link {
+    background-color: #2c3136;
+}
+
+.nav-pills .pill-2 .nav-link {
+    background-color: #2c3136;
+}
+
+.nav-pills .pill-3 .nav-link {
+    background-color: #2c3136;
+
+}

@@ -40,7 +40,7 @@
                             <td>{{ $p -> idProduk}}</td>
                             <td>{{ $p -> namaProduk}}</td>
                             <td>{{ $p -> deskripsi}}</td>
-                            <td>{{ $p -> hargaProduk}}</td>
+                            <td><span>Rp. </span>{{ $p -> hargaProduk}}</td>
                             <td>{{ $p -> user_id}}</td>
                             <td>{{ $p -> idKategori}}</td>
                             <td>
@@ -56,14 +56,10 @@
                     @endforeach
                 </tbody>
                 </table>
+                <div class="col-md-12">
+                    {{ $produks->links() }}
+                </div>
             </div>
-            <!-- /.card-body -->
-            <!-- <div class="card-footer">
-                --
-            </div> -->
-            <!-- /.card-footer-->
         </div>
-        <!-- /.card -->
-
     </section>
 @endsection

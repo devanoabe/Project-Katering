@@ -19,40 +19,43 @@
                 @csrf
                 @method('PUT')
                 <div class="form-group">
-                    <label for="idProduk">ID Barang</label> 
-                    <input type="text" name="idProduk" class="form-control" id="idProduk" value="{{ old('idProduk', $barang->idProduk) }}" aria-describedby="idBarang" > 
+                    <label for="idProduk">ID Produk</label> 
+                    <input type="text" name="idProduk" class="form-control" id="idProduk" value="{{ old('idProduk', $produk->idProduk) }}" aria-describedby="idProduk" > 
                 </div>
                 <div class="form-group">
-                    <label for="idSupplier">ID Supplier</label> 
-                    <select name="idSupplier" class="form-control" id="supplier">
-                        @foreach($supplier as $s)
-                            <option value="{{ old('idSupplier', $s -> idSupplier) }}">{{ $s -> nama }}</option>
+                    <label for="namaProduk">Nama Produk</label> 
+                    <input type="text" name="namaProduk" class="form-control" id="namaProduk" value="{{ old('namaProduk', $produk->namaProduk) }}" aria-describedby="namaProduk" > 
+                </div>
+                <div class="form-group">
+                    <label for="deskripsi">Deskripsi</label> 
+                    <input type="text" name="deskripsi" class="form-control" id="deskripsi" value="{{ old('deskripsi', $produk->deskripsi) }}" aria-describedby="deskripsi" > 
+                </div>
+                <div class="form-group">
+                    <label for="hargaProduk">Harga Produk</label> 
+                    <input type="text" name="hargaProduk" class="form-control" id="hargaProduk" value="{{ old('hargaProduk', $produk->hargaProduk) }}" aria-describedby="hargaProduk" > 
+                </div>
+                <div class="form-group">
+                    <label for="user_id">ID User</label> 
+                    <select name="user_id" class="form-control" id="user">
+                        @foreach($user as $u)
+                            <option value="{{ old('user_id', $u -> id) }}">{{ $u -> name }}</option>
                         @endforeach
                     </select>
                 </div>
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label for="idUser">ID User</label>
                     <select name="idUser" class="form-control" id="user">
                         @foreach($user as $u)
                             <option value="{{ $u -> idUser }}">{{ $u -> username }}</option>
                         @endforeach
                     </select>
-
                     <script>
                         document.getElementById('user').addEventListener('change', function() {
                             var selectedOption = this.value;
                             localStorage.setItem('selectedOption', selectedOption);
                         });
                     </script>
-                </div>
-                <div class="form-group">
-                    <label for="idSatuan">ID Satuan</label> 
-                    <select name="idSatuan" class="form-control" id="satuan">
-                        @foreach($satuan as $s)
-                            <option value="{{ old('idSatuan', $s -> idSatuan) }}">{{ $s -> namaSatuan }}</option>
-                        @endforeach
-                    </select> 
-                </div>
+                </div> -->
                 <div class="form-group">
                     <label for="idKategori">ID Kategori</label> 
                     <select name="idKategori" class="form-control">
@@ -60,10 +63,6 @@
                             <option value="{{ $k -> idKategori }}">{{ $k -> namaKategori }}</option>
                         @endforeach
                     </select> 
-                </div>
-                <div class="form-group">
-                    <label for="namaBarang">Nama Barang</label> 
-                    <input type="text" name="namaBarang" class="form-control" id="namaBarang" value="{{ old('namaBarang', $barang->namaBarang) }}" aria-describedby="namaBarang" > 
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>

@@ -19,7 +19,7 @@
                 @csrf
                 @method('PUT')
                 <div class="form-group">
-                    <label for="idProduk">ID Produk</label> 
+                    <label for="idProduk">id Produk</label> 
                     <input type="text" name="idProduk" class="form-control" id="idProduk" value="{{ old('idProduk', $produk->idProduk) }}" aria-describedby="idProduk" > 
                 </div>
                 <div class="form-group">

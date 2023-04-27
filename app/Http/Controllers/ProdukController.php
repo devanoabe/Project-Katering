@@ -10,7 +10,7 @@ use App\Models\User;
 class ProdukController extends Controller
 {
     public function index(){
-        $produk = Produk::all();
+        $produk = Produk::paginate(3);
         return view('admin.produk.index')->with('produks', $produk);
     }
 
@@ -53,8 +53,27 @@ class ProdukController extends Controller
 
     public function edit($idProduk)
     {
+        $user = User::where('role', '=', "1")->get();
+        $kategori = Kategori::all();
         $produk = Produk::find($idProduk);
-        return view('admin.produk.edit', compact('produk'));
+        return view('admin.produk.edit', compact('user', 'kategori', 'produk'));
+    }
+
+    public function update(Request $request, string $idProduk)
+    {
+        //melakukan validasi data
+        $request->validate([
+            'idProduk' => 'required',
+            'namaProduk' => 'required',
+            'deskripsi' => 'required',
+            'hargaProduk' => 'required',
+            'user_id' => 'required',
+            'idKategori' => 'required',
+            ]);
+        //fungsi eloquent untuk mengupdate data inputan kita
+            Produk::find($idProduk)->update($request->all());
+        //jika data berhasil diupdate, akan kembali ke halaman utama
+            return redirect()->route('produk.index')->with('success', 'Produk Catering Berhasil Diupdate');
     }
 
 }

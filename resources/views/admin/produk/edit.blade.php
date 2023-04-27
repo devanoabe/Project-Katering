@@ -19,7 +19,7 @@
                 @csrf
                 @method('PUT')
                 <div class="form-group">
-                    <label for="idProduk">id Produk</label> 
+                    <label for="idProduk">ID Produk</label> 
                     <input type="text" name="idProduk" class="form-control" id="idProduk" value="{{ old('idProduk', $produk->idProduk) }}" aria-describedby="idProduk" > 
                 </div>
                 <div class="form-group">
@@ -35,10 +35,10 @@
                     <input type="text" name="hargaProduk" class="form-control" id="hargaProduk" value="{{ old('hargaProduk', $produk->hargaProduk) }}" aria-describedby="hargaProduk" > 
                 </div>
                 <div class="form-group">
-                    <label for="user_id">id User</label> 
+                    <label for="user_id">ID User</label> 
                     <select name="user_id" class="form-control" id="user">
                         @foreach($user as $u)
-                            <option value="{{ old('user_id', $u -> user_id) }}">{{ $u -> name }}</option>
+                            <option value="{{ old('user_id', $u -> id) }}">{{ $u -> name }}</option>
                         @endforeach
                     </select>
                 </div>

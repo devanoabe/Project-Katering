@@ -43,6 +43,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home.user');
 
 
 Route::get('/welcome', [HomeController::class, 'welcome'])->name('home.welcome');
+Route::get('/catering', [HomeController::class, 'catering'])->name('home.catering');
 
 
 //User Route

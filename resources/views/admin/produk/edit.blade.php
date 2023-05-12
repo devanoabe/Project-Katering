@@ -54,7 +54,6 @@
                             <option value="{{ $u -> idUser }}">{{ $u -> username }}</option>
                         @endforeach
                     </select>
-
                     <script>
                         document.getElementById('user').addEventListener('change', function() {
                             var selectedOption = this.value;

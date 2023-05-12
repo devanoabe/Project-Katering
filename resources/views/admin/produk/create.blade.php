@@ -17,7 +17,7 @@
       </div>
       @endif
       
-      <form method="post" action="{{ route('produk.store') }}" id="myForm">
+      <form method="post" action="{{ route('produk.store') }}" id="myForm" enctype="multipart/form-data">
          @csrf
          <div class="form-group">
             <label for="idProduk">ID Produk</label> 
@@ -26,6 +26,10 @@
          <div class="form-group">
             <label for="namaProduk">Nama Produk</label> 
             <input type="text" name="namaProduk" class="form-control" id="namaProduk" aria-describedby="namaProduk" > 
+         </div>
+         <div class="form-group">
+            <label for="foto">Foto Produk: </label>
+            <input type="file" class="form-control" required="required" id="foto" name="foto"></br>
          </div>
          <div class="form-group">
             <label for="deskripsi">Deskripsi</label> 
@@ -44,8 +48,8 @@
             </select> 
          </div>
          <div class="form-group">
-            <label for="idKategori">ID Kategori</label> 
-            <select name="idKategori" class="form-control">
+            <label for="kategori_id">ID Kategori</label> 
+            <select name="kategori_id" class="form-control">
                 @foreach($kategori as $k)
                     <option value="{{ $k -> idKategori }}">{{ $k -> namaKategori }}</option>
                 @endforeach

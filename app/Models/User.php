@@ -6,6 +6,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Casts\Attribute;
+use App\Models\Produk;
 
 class User extends Authenticatable
 {
@@ -20,6 +21,10 @@ class User extends Authenticatable
         'telepon',
         'role',
     ];
+    public function produk()
+    {
+        return $this->hasMany(Produk::class);
+    }
 
     /**
      * The attributes that should be hidden for arrays.

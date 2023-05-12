@@ -8,6 +8,7 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\PesananController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,12 +32,15 @@ Auth::routes();
 Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function(){
     Route::get('/beranda', [UserController::class, 'dashboard'])->name('admin.beranda');
     Route::get('/user', [UserController::class, 'index'])->name('admin.user');
+    
     Route::resource('kategori', KategoriController::class);
+    Route::get('/produk/exportPDF', [ProdukController::class, 'exportPDF'])->name('exportPDF');
     Route::resource('produk', ProdukController::class);
     Route::resource('pesanan', PesananController::class);
 });
 
 Route::get('/home', [HomeController::class, 'index'])->name('home.user');
+
 
 Route::get('/welcome', [HomeController::class, 'welcome'])->name('home.welcome');
 

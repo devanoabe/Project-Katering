@@ -122,7 +122,6 @@ class ProdukController extends Controller
 
     public function exportPDF()
     {
-        
         $produks = Produk::select('idProduk', 'namaProduk', 'deskripsi', 'hargaProduk', 'user_id', 'kategori_id')->get();
         $pdf = PDF::loadView('admin.produk.produk_pdf', ['produks' => $produks])->setOptions(['defaultFont' => 'sans-serif']);
         return $pdf->download('Produk.pdf');  

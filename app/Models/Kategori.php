@@ -9,7 +9,7 @@ use App\Models\Produk;
 class Kategori extends Model
 {
     use HasFactory;
-    protected $table = 'kategori';
+    protected $table = 'kategoris';
     protected $primaryKey = 'idKategori';
     protected $keyType = 'string';
     protected $fillable = [

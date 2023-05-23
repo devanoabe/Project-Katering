@@ -1,0 +1,109 @@
+body{
+    margin-top:20px;
+    background: #f6f9fc;
+}
+
+#main-wrapper{
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+.form-group{
+    /* width: 80%; */
+    padding: 8px;
+}
+
+
+.account-block {
+    padding: 0;
+    background-image: url("../assets/img/cat.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    position: relative;
+    border-radius: 4%;
+}
+
+.register-block {
+    height: 100%;
+    position: relative;
+}
+
+
+.account-block .overlay {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.007);
+    border-radius: 4%;
+}
+.account-block .account-testimonial {
+    text-align: right;
+    color: #fff;
+    position: absolute;
+    margin: 0 auto;
+    padding-top: 1.75rem;
+    padding-right: 1.75rem;
+    left: 0;
+    right: 0;
+}
+
+.text-theme {
+    color: #5369f8 !important;
+}
+
+.btn-theme {
+    background-color: #5369f8;
+    border-color: #5369f8;
+    color: #fff;
+}
+
+/* .btn-login{
+    width: 506px;
+    background-color: #4CAF50;
+} */
+
+.btn-forget{
+    align-items: center;
+}
+
+/* CSS */
+.button-74 {
+  background-color: #fbeee0;
+  border: 2px solid #422800;
+  border-radius: 30px;
+  box-shadow: #422800 4px 4px 0 0;
+  color: #422800;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 0 18px;
+  line-height: 50px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-74:hover {
+  background-color: #fff;
+}
+
+.button-74:active {
+  box-shadow: #422800 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+
+@media (min-width: 768px) {
+  .button-74 {
+    min-width: 120px;
+    padding: 0 25px;
+  }
+}

@@ -1,29 +1,31 @@
 <?php
 
 namespace App\Models;
-
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Database\Eloquent\Casts\Attribute;
+use Illuminate\Notifications\Notifiable;
+// sanctum
+use Laravel\Sanctum\HasApiTokens;
 use App\Models\Produk;
+
 
 class User extends Authenticatable
 {
-    protected $table = 'users';
+    use HasApiTokens, HasFactory, Notifiable;
     
     protected $fillable = [
-        'user_id',
         'name', 
         'username', 
         'password',  
         'email',
         'telepon',
-        'role',
+        'role',  
     ];
-    public function produk()
+
+    public function setRoleAttribute($value)
     {
-        return $this->hasMany(Produk::class);
+        $this->attributes['role'] = $value ?: 0;
     }
 
     /**

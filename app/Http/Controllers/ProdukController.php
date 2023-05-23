@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Models\Produk;
 use App\Models\Kategori;
 use App\Models\User;
@@ -11,8 +12,8 @@ use PDF;
 class ProdukController extends Controller
 {
     public function index(){
-        $produk = Produk::paginate(3);
-        return view('admin.produk.index')->with('produks', $produk);
+        $produks = Produk::with('kategori')->paginate(3);
+        return view('admin.produk.index', compact('produks'));
     }
 
     public function create()

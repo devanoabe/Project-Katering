@@ -8,8 +8,8 @@ use App\Models\Kategori;
 class KategoriController extends Controller
 {
     public function index(){
-        $kategori = Kategori::all();
-        return view('admin.kategori.index')->with('kategoris', $kategori);
+        $kategoris = Kategori::all();
+        return view('admin.kategori.index')->with('kategoris', $kategoris);
     }
 
     public function create()

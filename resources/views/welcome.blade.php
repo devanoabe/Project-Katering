@@ -149,6 +149,7 @@
                   var infowindow = new google.maps.InfoWindow({
                     position: malang,
                     content: contentString,
+                    // Menampilkan info window pada peta
                   });
 
                   var marker = new google.maps.Marker({
@@ -156,7 +157,6 @@
                     map:map
                   });
 
-                  // Menampilkan info window pada peta
                   infowindow.open({
                     anchor: marker,
                     map,

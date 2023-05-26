@@ -13,7 +13,9 @@ class ProdukController extends Controller
 {
     public function index(){
         $produks = Produk::with('kategori')->paginate(3);
-        return view('admin.produk.index', compact('produks'));
+        $user = User::where('role', '=', "1")->get();
+        $kategori = Kategori::all();
+        return view('admin.produk.index', compact('produks', 'user', 'kategori'));
     }
 
     public function create()

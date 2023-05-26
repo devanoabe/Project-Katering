@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use JWTAuth;
 use Tymon\JWTAuth\Exceptions\JWTException;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -19,7 +20,9 @@ class UserController extends Controller
 
     public function dashboard()
     {   
-        return view('admin.dashboard');
+        $user = DB::table('users')->count();
+        $produk = DB::table('produks')->count();
+        return view('admin.dashboard', compact('user', 'produk'));
     }
 
     public function login(Request $request)

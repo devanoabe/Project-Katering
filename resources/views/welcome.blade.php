@@ -27,8 +27,8 @@
 
   <main id="main">
 
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
+<!-- ======= About Section ======= -->
+<section id="about" class="about">
       <div class="container" data-aos="fade-up">
 
         <div class="row">
@@ -38,20 +38,17 @@
             </div>
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
-            <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+            <h3>Farhan Catering adalah penyedia layanan katering yang diakui dengan reputasi yang solid.</h3>
             <p class="fst-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
+            Prinsip utama kami mementingkan kepuasan pelanggan dan siap untuk menyesuaikan menu dan layanan sesuai dengan kebutuhan Anda.
             </p>
             <ul>
-              <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-              <li><i class="bi bi-check-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-              <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+              <li><i class="bi bi-check-circle"></i> Kami Menyajikan makanan dengan bahan berkualitas tinggi</li>
+              <li><i class="bi bi-check-circle"></i> Kami memiliki pengalaman luas dalam mengelola acara Anda</li>
+              <li><i class="bi bi-check-circle"></i> Kami berkomitmen untuk memberikan pelayanan yang paling baik untuk kepuasan pelanggan</li>
             </ul>
             <p>
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum
+            Jika Anda mencari pilihan yang handal untuk katering acara Anda, Farhan Catering adalah pilihan yang tepat.
             </p>
           </div>
         </div>
@@ -65,7 +62,7 @@
 
         <div class="section-title">
           <h2>Why Us</h2>
-          <p>Why Choose Our Restaurant</p>
+          <p>Mengapa Harus Memilih Kami?</p>
         </div>
 
         <div class="row">
@@ -73,24 +70,29 @@
           <div class="col-lg-4">
             <div class="box" data-aos="zoom-in" data-aos-delay="100">
               <span>01</span>
-              <h4>Lorem Ipsum</h4>
-              <p>Ulamco laboris nisi ut aliquip ex ea commodo consequat. Et consectetur ducimus vero placeat</p>
+              <h4>Kualitas Makanan Tinggi</h4>
+              <p> Farhan Catering menyajikan makanan dengan kualitas yang tinggi, 
+                menggunakan bahan segar dan berkualitas untuk menciptakan hidangan yang lezat dan bernutrisi.</p>
             </div>
           </div>
 
           <div class="col-lg-4 mt-4 mt-lg-0">
             <div class="box" data-aos="zoom-in" data-aos-delay="200">
               <span>02</span>
-              <h4>Repellat Nihil</h4>
-              <p>Dolorem est fugiat occaecati voluptate velit esse. Dicta veritatis dolor quod et vel dire leno para dest</p>
+              <h4>Keahlian dalam Mengelola Acara</h4>
+              <p>Tim Farhan Catering memiliki pengalaman dalam mengelola acara, mulai dari pernikahan hingga acara 
+                korporat, dan dapat menyediakan layanan katering yang sesuai dengan preferensi Anda.
+              </p>
             </div>
           </div>
 
           <div class="col-lg-4 mt-4 mt-lg-0">
             <div class="box" data-aos="zoom-in" data-aos-delay="300">
               <span>03</span>
-              <h4> Ad ad velit qui</h4>
-              <p>Molestiae officiis omnis illo asperiores. Aut doloribus vitae sunt debitis quo vel nam quis</p>
+              <h4>Fleksibilitas</h4>
+              <p>Farhan Catering siap untuk menyesuaikan menu dan layanan sesuai dengan kebutuhan Anda, memberikan fleksibilitas yang 
+                tinggi, dan bertujuan untuk memastikan kepuasan pelanggan.
+              </p>
             </div>
           </div>
 
@@ -98,6 +100,7 @@
 
       </div>
     </section><!-- End Why Us Section -->
+
 
     <!-- ======= Menu Section ======= -->
 

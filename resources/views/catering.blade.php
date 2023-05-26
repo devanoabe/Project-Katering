@@ -26,31 +26,44 @@
     @endforeach
   </ul>
 </div>
+
 <div class="modal fade" id="pesanModal" tabindex="-1" role="dialog" aria-labelledby="exampleModelCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 style="color: black;" class="modal-title" id="exampleModalLongTitle">Pengumuman</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
+        <h2 class="modal-title wa">
+            Pembayaran
+            <p>
+              Silahkan lanjutkan untuk pemesanan
+            </p>
+          </h2>
+        <button type="button" class="close" data-dismiss="modal">
+          <i class="fas fa-times"></i>
         </button>
       </div>
-      <div class="modal-body">
-        <div class="row">
-          <h5 style="color: black;">
-            Untuk pemesanan silahkan hubungi nomor wa
-          </h5>
-        </div>
+      <div class="modal-body img" style="justify-content: center; align-items: center;">
+        <img src="../assets/img/logo.png" style="width: 500px; height: auto;">
+        <p style="text-align: left">
+          Nomor Telepon
+        </p>
+        <h2 style="text-align: center; font-size: 50px">0858-0046-0598</h2>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">
-          <a href="https://wa.me/6281339059398">
-            Hubungi
-          </a>
-        </button>
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      <div class="container-fluid mb-4">
+        <div class="row">
+          <div class="col-6 text-left">
+            <button type="button" class="btn w-100 cls" data-dismiss="modal">Close</button>
+          </div>
+          <div class="col-6 text-right">
+            <button type="submit" class="btn w-100 sbt">
+              <a href="https://wa.me/6281339059398">
+                Hubungi
+              </a>
+            </button>
+          </div>
+        </div>
       </div>
-      <!-- Konten lainnya di dalam modal -->
+      </div>
     </div>
   </div>
 </div>
@@ -67,39 +80,54 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title">Tambah Pesanan</h4>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <i class="fa-regular fa-flag mr-2"></i>
+        <h2 class="modal-title">
+          Tambah Pesanan
+          <p>
+             Silahkan pilih Tanggal dan Jumlah Pesanan
+          </p>
+        </h2>
+        <button type="button" class="close" data-dismiss="modal">
+          <i class="fas fa-times"></i>
+        </button>
       </div>
       <div class="modal-body" style="color:black;">
         <form method="post" action="{{ route('pesanan.store') }}" id="myForm" enctype="multipart/form-data">
           @csrf
           <div class="form-group">
-            <label for="idProduk">ID Produk</label>
+            <label for="idProduk">Nama Produk : </label>
             <input type="hidden" name="idProduk" id="idProduk">
-            <span id="namaProduk"></span>
+            <br>
+            <p id="namaProduk"></p>
           </div>
           <div class="form-group">
-            <label for="tglPemesanan">Tanggal Pemesanan</label>
+            <label for="tglPemesanan">Tanggal Pemesanan</label><span>*</span>
             <input type="date" name="tglPemesanan" class="form-control" id="tglPemesanan" aria-describedby="tglPemesanan">
           </div>
           <div class="form-group">
-            <label for="tglPengambilan">Tanggal Pengambilan</label>
+            <label for="tglPengambilan">Tanggal Pengambilan</label><span>*</span>
             <input type="date" name="tglPengambilan" class="form-control" id="tglPengambilan" aria-describedby="tglPengambilan">
           </div>
           <div class="form-group">
-            <label for="jumlahPesanan">Jumlah Pesanan</label>
+            <label for="jumlahPesanan">Jumlah Pesanan</label><span>*</span>
             <input type="number" name="jumlahPesanan" class="form-control" id="jumlahPesanan" aria-describedby="jumlahPesanan">
           </div>
-          <div class="form-group">
+      </div>
+      <div class="modal-footer justify-content-between">
             <label for="totalHarga">Total Harga</label>
             <span id="totalHarga"></span>
+      </div>
+      <div class="container-fluid mb-4">
+        <div class="row">
+          <div class="col-3 text-left">
+            <button type="button" class="btn w-100 cls" data-dismiss="modal">Close</button>
           </div>
-          <button type="submit" data-toggle="modal" data-target="#wa" class="btn btn-primary">Submit</button>
+          <div class="col-9 text-right">
+            <button type="submit" class="btn w-100 sbt">Pesan</button>
+          </div>
+        </div>
+      </div>
         </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-      </div>
     </div>
   </div>
 </div>

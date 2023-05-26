@@ -123,10 +123,14 @@ class ProdukController extends Controller
             return redirect()->route('produk.index')->with('success', 'Produk Catering Berhasil Diupdate');
     }
 
+
     public function exportPDF()
     {
         $produks = Produk::select('idProduk', 'namaProduk', 'deskripsi', 'hargaProduk', 'user_id', 'kategori_id')->get();
         $pdf = PDF::loadView('admin.produk.produk_pdf', ['produks' => $produks])->setOptions(['defaultFont' => 'sans-serif']);
         return $pdf->download('Produk.pdf');  
     }
+  
+
 }
+

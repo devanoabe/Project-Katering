@@ -54,4 +54,4 @@
               @endguest
           </ul>
       </div>
-  </header><!-- End Header -->
+  </header>

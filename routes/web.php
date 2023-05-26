@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\PesananController;
+use App\Http\Controllers\DashboardController;
 
 
 /*
@@ -31,20 +32,23 @@ Auth::routes();
 
 Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function(){
     Route::get('/beranda', [UserController::class, 'dashboard'])->name('admin.beranda');
+    // Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('admin.dashboard');
     Route::get('/user', [UserController::class, 'index'])->name('admin.user');
-    
     Route::resource('kategori', KategoriController::class);
     Route::get('/produk/exportPDF', [ProdukController::class, 'exportPDF'])->name('exportPDF');
     Route::resource('produk', ProdukController::class);
-    Route::resource('pesanan', PesananController::class);
+   
 });
 
 Route::get('/home', [HomeController::class, 'index'])->name('home.user');
 
 
 Route::get('/welcome', [HomeController::class, 'welcome'])->name('home.welcome');
-Route::get('/catering', [HomeController::class, 'catering'])->name('home.catering');
 
+Route::get('/catering', [PesananController::class, 'catering'])->name('home.catering');
+Route::resource('pesanan', PesananController::class);
+
+Route::get('/catering', [HomeController::class, 'catering'])->name('home.catering');
 
 //User Route
 // Route::middleware(['auth','user-role:user'])->group(function()

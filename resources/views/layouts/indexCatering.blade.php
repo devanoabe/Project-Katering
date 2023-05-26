@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,6 +25,9 @@
   <link href="{{asset('assets/template-user/assets/vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
   <link href="{{asset('assets/template-user/assets/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
   <link href="{{asset('assets/template-user/assets/css/style.css')}}" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="{{ asset('qq/js/jquery.min.js') }}"></script>
+  <script src="{{ asset('qq/js/bootstrap.min.js') }}"></script>
     @include('layouts.headerCatering')
 </head>
 

@@ -14,7 +14,7 @@
                 </div>
             </a>
 
-            <!-- Divider -->
+            <!-- Divider -->use Illuminate\Support\Facades\DB;
             <hr style="border-color: #ebedef;"  class="sidebar-divider my-3">
 
             <!-- Nav Item - Dashboard -->

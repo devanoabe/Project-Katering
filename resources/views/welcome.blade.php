@@ -14,7 +14,7 @@
           <h2>Menyediakan berbagai paket makanan</h2>
 
           <div class="btns">
-            <a href="#menu" class="btn-menu animated fadeInUp scrollto">Our Menu</a>
+            <a href="{{ route('home.catering')}}" class="btn-menu animated fadeInUp scrollto">Our Menu</a>
           </div>
         </div>
         <div class="col-lg-4 d-flex align-items-center justify-content-center position-relative" data-aos="zoom-in" data-aos-delay="200">
@@ -38,17 +38,20 @@
             </div>
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
-            <h3>Farhan Catering adalah penyedia layanan katering yang diakui dengan reputasi yang solid.</h3>
+            <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
             <p class="fst-italic">
-            Prinsip utama kami mementingkan kepuasan pelanggan dan siap untuk menyesuaikan menu dan layanan sesuai dengan kebutuhan Anda.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+              magna aliqua.
             </p>
             <ul>
-              <li><i class="bi bi-check-circle"></i> Kami Menyajikan makanan dengan bahan berkualitas tinggi</li>
-              <li><i class="bi bi-check-circle"></i> Kami memiliki pengalaman luas dalam mengelola acara Anda</li>
-              <li><i class="bi bi-check-circle"></i> Kami berkomitmen untuk memberikan pelayanan yang paling baik untuk kepuasan pelanggan</li>
+              <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+              <li><i class="bi bi-check-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+              <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
             </ul>
             <p>
-            Jika Anda mencari pilihan yang handal untuk katering acara Anda, Farhan Catering adalah pilihan yang tepat.
+              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+              culpa qui officia deserunt mollit anim id est laborum
             </p>
           </div>
         </div>
@@ -62,7 +65,7 @@
 
         <div class="section-title">
           <h2>Why Us</h2>
-          <p>Mengapa Harus Memilih Kami?</p>
+          <p>Why Choose Our Restaurant</p>
         </div>
 
         <div class="row">
@@ -70,29 +73,24 @@
           <div class="col-lg-4">
             <div class="box" data-aos="zoom-in" data-aos-delay="100">
               <span>01</span>
-              <h4>Kualitas Makanan Tinggi</h4>
-              <p> Farhan Catering menyajikan makanan dengan kualitas yang tinggi, 
-                menggunakan bahan segar dan berkualitas untuk menciptakan hidangan yang lezat dan bernutrisi.</p>
+              <h4>Lorem Ipsum</h4>
+              <p>Ulamco laboris nisi ut aliquip ex ea commodo consequat. Et consectetur ducimus vero placeat</p>
             </div>
           </div>
 
           <div class="col-lg-4 mt-4 mt-lg-0">
             <div class="box" data-aos="zoom-in" data-aos-delay="200">
               <span>02</span>
-              <h4>Keahlian dalam Mengelola Acara</h4>
-              <p>Tim Farhan Catering memiliki pengalaman dalam mengelola acara, mulai dari pernikahan hingga acara 
-                korporat, dan dapat menyediakan layanan katering yang sesuai dengan preferensi Anda.
-              </p>
+              <h4>Repellat Nihil</h4>
+              <p>Dolorem est fugiat occaecati voluptate velit esse. Dicta veritatis dolor quod et vel dire leno para dest</p>
             </div>
           </div>
 
           <div class="col-lg-4 mt-4 mt-lg-0">
             <div class="box" data-aos="zoom-in" data-aos-delay="300">
               <span>03</span>
-              <h4>Fleksibilitas</h4>
-              <p>Farhan Catering siap untuk menyesuaikan menu dan layanan sesuai dengan kebutuhan Anda, memberikan fleksibilitas yang 
-                tinggi, dan bertujuan untuk memastikan kepuasan pelanggan.
-              </p>
+              <h4> Ad ad velit qui</h4>
+              <p>Molestiae officiis omnis illo asperiores. Aut doloribus vitae sunt debitis quo vel nam quis</p>
             </div>
           </div>
 
@@ -102,13 +100,13 @@
     </section><!-- End Why Us Section -->
 
     <!-- ======= Menu Section ======= -->
-    
+
 
     <!-- ======= Specials Section ======= -->
     <!-- End Specials Section -->
 
     <!-- ======= Events Section ======= -->
-    
+
     <!-- ======= Book A Table Section ======= -->
     <!-- End Book A Table Section -->
 
@@ -133,62 +131,61 @@
 
       <div data-aos="fade-up">
         <!-- elemen untuk menampilkan peta -->
-          <div id="map" style="width: 100%; height:400px;"></div>
+        <div id="map" style="width: 100%; height:400px;"></div>
 
-            <script>
-              function initMap() {
-                  // Membuat objek untuk titik koordinat
-                  var malang = { lat: -7.97065104295767, lng: 112.6490732466264 };
+        <script>
+          function initMap() {
+            // Membuat objek untuk titik koordinat
+            var malang = {
+              lat: -7.97065104295767,
+              lng: 112.6490732466264
+            };
 
-                  // Membuat objek peta
-                  var map = new google.maps.Map(document.getElementById('map'), {
-                    zoom: 9,
-                    center: malang
-                  });
+            // Membuat objek peta
+            var map = new google.maps.Map(document.getElementById('map'), {
+              zoom: 9,
+              center: malang
+            });
 
-                  var contentString = '<h2 style="color: black; font-size: 18px; font-family: Open Sans;">Farhan Katering</h2>';
+            var contentString = '<h2 style="color: black; font-size: 18px; font-family: Open Sans;">Farhan Katering</h2>';
 
-                  var infowindow = new google.maps.InfoWindow({
-                    position: malang,
-                    content: contentString,
-                    // Menampilkan info window pada peta
-                  });
+            var infowindow = new google.maps.InfoWindow({
+              position: malang,
+              content: contentString,
+            });
 
-                  var marker = new google.maps.Marker({
-                    position:new google.maps.LatLng(-7.97065104295767, 112.6490732466264),
-                    map:map
-                  });
+            var marker = new google.maps.Marker({
+              position: new google.maps.LatLng(-7.97065104295767, 112.6490732466264),
+              map: map
+            });
 
-                  infowindow.open({
-                    anchor: marker,
-                    map,
-                    shouldFocus: false
-                  });
-                }
-            </script>
-            <script async defer src="https://maps.googleapis.com/maps/api/js?callback=initMap"></script>
-            <a style="color: #989898; padding-top: 30px;" href="https://goo.gl/maps/9THd5Q2b6T6Ze4yz9">Tampilkan di Peta</a>
+            // Menampilkan info window pada peta
+            infowindow.open(map, marker);
+          }
+        </script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?callback=initMap"></script>
+        <a style="color: #989898; padding-top: 30px;" href="https://goo.gl/maps/9THd5Q2b6T6Ze4yz9">Tampilkan di Peta</a>
       </div>
 
       <div class="container" data-aos="fade-up">
 
         <div class="row mt-5">
 
-            <div class="address col-lg-4">
-              <i class="bi bi-geo-alt"></i>
-              <h4>Location:</h4>
-              <p>KOST FARIDA, Jl. Warinoi III No.10, Bunulrejo, Kec. Blimbing, Kota Malang, Jawa Timur 65123, Indonesia</p>
-            </div>
-            <div class="open-hours col-lg-4">
-              <i class="bi bi-clock"></i>
-              <h4>Open Hours:</h4>
-              <p>Monday-Saturday:<br>08:00 AM - 05:00 PM</p>
-            </div>
-            <div class="phone col-lg-4">
-              <i class="bi bi-phone"></i>
-              <h4>Call:</h4>
-              <p>0858-0046-0598</p>
-            </div>
+          <div class="address col-lg-4">
+            <i class="bi bi-geo-alt"></i>
+            <h4>Location:</h4>
+            <p>KOST FARIDA, Jl. Warinoi III No.10, Bunulrejo, Kec. Blimbing, Kota Malang, Jawa Timur 65123, Indonesia</p>
+          </div>
+          <div class="open-hours col-lg-4">
+            <i class="bi bi-clock"></i>
+            <h4>Open Hours:</h4>
+            <p>Monday-Saturday:<br>08:00 AM - 05:00 PM</p>
+          </div>
+          <div class="phone col-lg-4">
+            <i class="bi bi-phone"></i>
+            <h4>Call:</h4>
+            <p>0858-0046-0598</p>
+          </div>
 
         </div>
 
@@ -276,4 +273,5 @@
 
 </body>
 @endsection
+
 </html>

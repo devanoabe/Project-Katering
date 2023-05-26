@@ -42,10 +42,19 @@
           </h5>
         </div>
       </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">
+          <a href="https://wa.me/6281339059398">
+            Hubungi
+          </a>
+        </button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
       <!-- Konten lainnya di dalam modal -->
     </div>
   </div>
 </div>
+
 @if(session('showModal'))
 <script>
   $(document).ready(function() {
@@ -85,7 +94,7 @@
             <label for="totalHarga">Total Harga</label>
             <span id="totalHarga"></span>
           </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" data-toggle="modal" data-target="#wa" class="btn btn-primary">Submit</button>
         </form>
       </div>
       <div class="modal-footer">
@@ -94,6 +103,7 @@
     </div>
   </div>
 </div>
+
 <script>
   $(document).ready(function() {
   $('.button').on('click', function() {

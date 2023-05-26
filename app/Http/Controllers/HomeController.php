@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Produk;
 use Auth;
-use App\Models\Produk;
 use App\Models\Pesanan;
 use App\Models\User;
 

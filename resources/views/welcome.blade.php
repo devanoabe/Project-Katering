@@ -43,9 +43,9 @@
             Prinsip utama kami mementingkan kepuasan pelanggan dan siap untuk menyesuaikan menu dan layanan sesuai dengan kebutuhan Anda.
             </p>
             <ul>
-              <li><i class="bi bi-check-circle"></i>Kami Menyajikan makanan dengan bahan berkualitas tinggi</li>
-              <li><i class="bi bi-check-circle"></i>Kami memiliki pengalaman luas dalam mengelola acara Anda</li>
-              <li><i class="bi bi-check-circle"></i>Kami berkomitmen untuk memberikan pelayanan yang paling baik untuk kepuasan pelanggan</li>
+              <li><i class="bi bi-check-circle"></i> Kami Menyajikan makanan dengan bahan berkualitas tinggi</li>
+              <li><i class="bi bi-check-circle"></i> Kami memiliki pengalaman luas dalam mengelola acara Anda</li>
+              <li><i class="bi bi-check-circle"></i> Kami berkomitmen untuk memberikan pelayanan yang paling baik untuk kepuasan pelanggan</li>
             </ul>
             <p>
             Jika Anda mencari pilihan yang handal untuk katering acara Anda, Farhan Catering adalah pilihan yang tepat.

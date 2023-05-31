@@ -30,19 +30,39 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 style="color: black;" class="modal-title" id="exampleModalLongTitle">Pengumuman</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
+        <h2 class="modal-title wa">
+          Pembayaran
+          <p>
+            Silahkan lanjutkan untuk pemesanan
+          </p>
+        </h2>
+        <button type="button" class="close" data-dismiss="modal">
+          <i class="fas fa-times"></i>
         </button>
       </div>
-      <div class="modal-body">
-        <div class="row">
-          <h5 style="color: black;">
-            Untuk pemesanan silahkan hubungi nomor wa
-          </h5>
+      <div class="modal-body img" style="justify-content: center; align-items: center;">
+        <img src="../assets/img/logo.png" style="width: 500px; height: auto;">
+        <p style="text-align: left">
+          Nomor Telepon
+        </p>
+        <h2 style="text-align: center; font-size: 50px; color:black;">0858-0046-0598</h2>
+      </div>
+      <div class="modal-footer">
+        <div class="container-fluid mb-4">
+          <div class="row">
+            <div class="col-6 text-left">
+              <button type="button" class="btn w-100 cls" data-dismiss="modal">Close</button>
+            </div>
+            <div class="col-6 text-right">
+              <button type="submit" class="btn w-100 sbt">
+                <a href="https://wa.me/6281339059398">
+                  Hubungi
+                </a>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
-      <!-- Konten lainnya di dalam modal -->
     </div>
   </div>
 </div>
@@ -96,32 +116,32 @@
 </div>
 <script>
   $(document).ready(function() {
-  $('.button').on('click', function() {
-    var card = $(this).closest('.card');
-    var idProduk = card.data('produk-id');
-    var namaProduk = card.data('produk-nama');
-    var hargaProduk = card.data('produk-harga');
+    $('.button').on('click', function() {
+      var card = $(this).closest('.card');
+      var idProduk = card.data('produk-id');
+      var namaProduk = card.data('produk-nama');
+      var hargaProduk = card.data('produk-harga');
 
-    $('#idProduk').val(idProduk);
-    $('#namaProduk').text(namaProduk);
-    $('#totalHarga').text('Rp. 0.00'); // Set default value to 0.00
+      $('#idProduk').val(idProduk);
+      $('#namaProduk').text(namaProduk);
+      $('#totalHarga').text('Rp. 0.00'); // Set default value to 0.00
 
-    $('#jumlahPesanan').on('input', function() {
-      var jumlahPesanan = parseInt($(this).val());
-      var totalHarga = jumlahPesanan * hargaProduk;
+      $('#jumlahPesanan').on('input', function() {
+        var jumlahPesanan = parseInt($(this).val());
+        var totalHarga = jumlahPesanan * hargaProduk;
 
-      if (!isNaN(totalHarga)) {
-        $('#totalHarga').text('Rp. ' + totalHarga.toFixed(2));
-      } else {
-        $('#totalHarga').text('Rp. 0.00');
-      }
+        if (!isNaN(totalHarga)) {
+          $('#totalHarga').text('Rp. ' + totalHarga.toFixed(2));
+        } else {
+          $('#totalHarga').text('Rp. 0.00');
+        }
+      });
+    });
+    // Event saat modal ditutup
+    $('#pesan').on('hidden.bs.modal', function() {
+      $('#jumlahPesanan').val(''); // Mengosongkan input jumlah pesanan
+      $('#totalHarga').text('Rp. 0.00'); // Mengatur total harga menjadi Rp 0.00
     });
   });
-  // Event saat modal ditutup
-  $('#pesan').on('hidden.bs.modal', function() {
-    $('#jumlahPesanan').val(''); // Mengosongkan input jumlah pesanan
-    $('#totalHarga').text('Rp. 0.00'); // Mengatur total harga menjadi Rp 0.00
-  });
-});
 </script>
 @endsection

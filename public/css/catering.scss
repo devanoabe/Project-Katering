@@ -11,7 +11,7 @@
 
 .cards {
   display: grid;
-  grid-template-columns:repeat(auto-fit,minmax(400px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   list-style: none;
   margin: 0;
   padding: 0;
@@ -25,10 +25,11 @@
 .card_image {
   height: calc(13*1.2rem);
   padding: 1.2rem 1.2rem 0;
-  position:relative;
+  position: relative;
 }
+
 .card_image:before,
-.card_image:after{
+.card_image:after {
   content: "";
   position: absolute;
   width: 20px;
@@ -38,20 +39,22 @@
   background: #e6e6e6b8;
   transform: rotate(45deg);
 }
-.card_image:after{
+
+.card_image:after {
   transform: rotate(-45deg);
-  top:auto;
-  bottom:-22px;
-  left:40%;
+  top: auto;
+  bottom: -22px;
+  left: 40%;
 }
+
 .card_image img {
-  width:100%;
-  height:100%;
-  object-fit:cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .cards_item {
-  filter:drop-shadow(0 0 5px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.25));
 }
 
 
@@ -62,31 +65,34 @@
   flex-direction: column;
   overflow: hidden;
   padding-left: 30px;
-  background: repeating-linear-gradient(#0000 0 calc(1.2rem - 1px),#66afe1 0 1.2rem) right bottom /100% 100%,linear-gradient(red 0 0) 30px 0/2px 100% #fff;
+  background: repeating-linear-gradient(#0000 0 calc(1.2rem - 1px), #66afe1 0 1.2rem) right bottom /100% 100%, linear-gradient(red 0 0) 30px 0/2px 100% #fff;
   background-repeat: no-repeat;
   line-height: 1.2rem;
-  -webkit-mask:radial-gradient(circle .8rem at 2px 50%,#0000 98%,#000)0 0/100% 2.4rem;
+  -webkit-mask: radial-gradient(circle .8rem at 2px 50%, #0000 98%, #000)0 0/100% 2.4rem;
 }
 
 .card_content {
   padding: 1.2rem;
 }
 
-h2.card_title,p {
+h2.card_title,
+p {
   margin: 1rem 0;
   color: #000;
 }
+
 h2.card_title {
-    font-size: 1.3em;
-    color: #000;
+  font-size: 1.3em;
+  color: #000;
 }
+
 body {
-  font-family:monospace;
-  background:#eee;
+  font-family: monospace;
+  background: #eee;
 }
 
 html {
-  font-size:15px;
+  font-size: 15px;
 }
 
 .button {
@@ -101,8 +107,9 @@ html {
   -webkit-transition: all ease-in-out 300ms;
   transition: all ease-in-out 300ms;
 }
+
 .button:hover {
   box-shadow: 0px 37px 20px -20px rgba(0, 0, 0, 0.2);
   -webkit-transform: translate(0px, -5px) scale(1.1);
-          transform: translate(0px, -5px) scale(1.1);
+  transform: translate(0px, -5px) scale(1.1);
 }

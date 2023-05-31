@@ -8,7 +8,7 @@
                 <div class="sidebar-brand-text">
                     <p style="  letter-spacing: -1px;
                                 font-size: 20px;
-                                font-weight-bold">
+                                font-weight-bold;">
                         Farhan Catering
                     </p>  
                 </div>
@@ -46,7 +46,7 @@
             </li>
 
             <li class="nav-item">
-                <a style="color: black;" class="nav-link" href="tables.html">
+                <a style="color: black;" class="nav-link" href="{{ route('pesanan.index') }}">
                     <i style="color: black;" class="fas fa-fw fa-table"></i>
                     <span>Pesanan</span></a>
             </li>

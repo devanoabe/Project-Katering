@@ -11,6 +11,7 @@
     <script src="{{ asset('qq/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('qq/js/main.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
 
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
@@ -33,8 +34,7 @@
     <div style="background-color: black" class="content-wrapper">
         @yield('content')
     </div>
-    <!-- /.content-wrapper -->
-    @include('layouts.footer')
+
 
     <!-- Control Sidebar -->
     <aside class="control-sidebar control-sidebar-dark">

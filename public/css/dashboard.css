@@ -1,0 +1,32 @@
+.fc{
+    background-image: url("../assets/img/fc.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 100% 35%
+}
+
+.fc .h5{
+    color: white;
+    font-size: 60px;
+    font-weight: bolder;
+}
+
+.fc .h2 i{
+    padding-right: 10px;
+}
+
+.btn {
+    margin-right: 0.5rem !important
+}
+
+.btn .animatebutton{
+    font-size: 0.875rem;
+    line-height: 1;
+    font-weight: 400;
+    padding: .7rem 1.5rem;
+    border-radius: 0.1275rem;
+    background-color: #ff7300;
+    color: black;
+    font-weight: bolder;
+}
+

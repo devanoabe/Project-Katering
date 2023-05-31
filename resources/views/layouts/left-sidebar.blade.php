@@ -2,7 +2,7 @@
     <link rel="stylesheet" href="{{asset('css/sidebar.css')}}">
 </head>
 
-<ul style="color: #fbf8f2;" class="navbar-nav sidebar nav-pills flex-column">
+<ul style="color: #fbf8f2; border: 1px solid #ebedef;" class="navbar-nav sidebar nav-pills flex-column">
 
             <!-- Sidebar - Brand -->
             <a style="color: black;" class="sidebar-brand d-flex flex-column align-items-center justify-content-center my-4" href="">
@@ -24,8 +24,8 @@
             <!-- Nav Item - Dashboard -->
             <li class="nav-item pill-1">
                 <a style="color: black;" href="{{ route('admin.beranda') }}" class="nav-link {{ (request()->routeIs('admin.beranda') ? 'active' : '') }}">
-                    <i style="color: black;font-size: 15px;" class="fas fa-fw fa-tachometer-alt"></i>
-                    <span style="color: black;font-size: 15px;">Dashboard</span>
+                <i style="color: black;font-size: 15px;" class="fas fa-fw fa-tachometer-alt"></i>    
+                <span style="color: black;font-size: 15px;">Dashboard</span>
                 </a>
             </li>
 
@@ -45,13 +45,16 @@
                     <div class="collapse" id="submenu1" aria-expanded="false">
                         <ul class="flex-column pl-2 nav">
                             <li class="nav-item">
-                                <a class="dropdown-item" href="{{ route('admin.user') }}">User</a>
+                                <a style="font-size: 15px" class="dropdown-item" href="{{ route('admin.user') }}">
+                                <i style="font-size: 7px; color: #4e73df; vertical-align: middle;" class="fa fa-circle pr-2" aria-hidden="true"></i>User</a>
                             </li>
                             <li class="nav-item">
-                                <a class="dropdown-item" href="{{ route('kategori.index') }}">Kategori</a>
+                                <a style="font-size: 15px"class="dropdown-item" href="{{ route('kategori.index') }}">
+                                <i style="font-size: 7px; color: #1cc88a; vertical-align: middle;" class="fa fa-circle pr-2" aria-hidden="true"></i>Kategori</a>
                             </li>
                             <li class="nav-item">
-                                <a class="dropdown-item" href="{{  route('produk.index')  }}">Produk</a>
+                                <a style="font-size: 15px" class="dropdown-item" href="{{  route('produk.index')  }}">
+                                <i style="font-size: 7px; color: #36b9cc; vertical-align: middle;" class="fa fa-circle pr-2" aria-hidden="true"></i>Produk</a>
                             </li>
                         </ul>
                     </div>

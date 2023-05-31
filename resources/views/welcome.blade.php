@@ -40,6 +40,7 @@
           <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
             <h3>Farhan Catering adalah penyedia layanan katering yang diakui dengan reputasi yang solid.</h3>
             <p class="fst-italic">
+              Prinsip utama kami mementingkan kepuasan pelanggan dan siap untuk menyesuaikan menu dan layanan sesuai dengan kebutuhan Anda.
             Prinsip utama kami mementingkan kepuasan pelanggan dan siap untuk menyesuaikan menu dan layanan sesuai dengan kebutuhan Anda.
             </p>
             <ul>
@@ -48,10 +49,13 @@
               <li><i class="bi bi-check-circle"></i> Kami berkomitmen untuk memberikan pelayanan yang paling baik untuk kepuasan pelanggan</li>
             </ul>
             <p>
+
+              Jika Anda mencari pilihan yang handal untuk katering acara Anda, Farhan Catering adalah pilihan yang tepat.
             Jika Anda mencari pilihan yang handal untuk katering acara Anda, Farhan Catering adalah pilihan yang tepat.
             </p>
           </div>
         </div>
+        
 
       </div>
     </section><!-- End About Section -->
@@ -71,6 +75,7 @@
             <div class="box" data-aos="zoom-in" data-aos-delay="100">
               <span>01</span>
               <h4>Kualitas Makanan Tinggi</h4>
+              <p> Farhan Catering menyajikan makanan dengan kualitas yang tinggi,
               <p> Farhan Catering menyajikan makanan dengan kualitas yang tinggi, 
                 menggunakan bahan segar dan berkualitas untuk menciptakan hidangan yang lezat dan bernutrisi.</p>
             </div>
@@ -80,6 +85,7 @@
             <div class="box" data-aos="zoom-in" data-aos-delay="200">
               <span>02</span>
               <h4>Keahlian dalam Mengelola Acara</h4>
+              <p>Tim Farhan Catering memiliki pengalaman dalam mengelola acara, mulai dari pernikahan hingga acara
               <p>Tim Farhan Catering memiliki pengalaman dalam mengelola acara, mulai dari pernikahan hingga acara 
                 korporat, dan dapat menyediakan layanan katering yang sesuai dengan preferensi Anda.
               </p>
@@ -90,6 +96,7 @@
             <div class="box" data-aos="zoom-in" data-aos-delay="300">
               <span>03</span>
               <h4>Fleksibilitas</h4>
+              <p>Farhan Catering siap untuk menyesuaikan menu dan layanan sesuai dengan kebutuhan Anda, memberikan fleksibilitas yang
               <p>Farhan Catering siap untuk menyesuaikan menu dan layanan sesuai dengan kebutuhan Anda, memberikan fleksibilitas yang 
                 tinggi, dan bertujuan untuk memastikan kepuasan pelanggan.
               </p>

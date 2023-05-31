@@ -8,15 +8,24 @@ use App\Models\Pesanan;
 use App\Models\Produk;
 use App\Models\User;
 
-
 class PesananController extends Controller
 {
     public function catering()
     {
-        $pesanan = Pesanan::all();
+        $pesanan = Pesanan::with('user')->get();
         $user = User::all();
         $produk = Produk::all();
         return view('catering', compact('pesanan', 'produk', 'user'));
+    }
+
+    public function updateStatus(Request $request, $idPesanan)
+    {
+        $status = $request->input('status', 'selesai');
+        $pesanan = Pesanan::find($idPesanan);
+        $pesanan->status = $status;
+        $pesanan->save();
+
+        return redirect()->route('pesanan.index')->with('success', 'Status berhasil diperbarui');
     }
 
     public function index()
@@ -50,6 +59,8 @@ class PesananController extends Controller
         $iduser = Auth::id();
         $pesanan->user_id = $iduser;
         $pesanan->idProduk = $request->idProduk;
+
+        // $pesanan->status = 'selesai'; // Atur nilai status
 
         $pesanan->save();
 

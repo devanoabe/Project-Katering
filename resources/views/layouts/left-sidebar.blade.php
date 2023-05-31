@@ -12,7 +12,7 @@
                 <div class="sidebar-brand-text">
                     <p style="  letter-spacing: -1px;
                                 font-size: 20px;
-                                font-weight-bold">
+                                font-weight-bold;">
                         Farhan Catering
                     </p>  
                 </div>
@@ -59,7 +59,8 @@
                         </ul>
                     </div>
                 </li>
-
+            <li class="nav-item">
+                <a style="color: black;" class="nav-link" href="{{ route('pesanan.index') }}">
             <li class="nav-item pill-3">
                 <a style="color: black;" href="{{ route('admin.user') }}" class="nav-link {{ (request()->routeIs('admin.user') ? 'active' : '') }}">
                     <i style="color: black;" class="fas fa-fw fa-table"></i>

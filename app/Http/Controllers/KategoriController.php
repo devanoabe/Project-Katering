@@ -4,12 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Kategori;
+use Illuminate\Support\Facades\DB;
 
 class KategoriController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $kategoris = Kategori::all();
-        return view('admin.kategori.index')->with('kategoris', $kategoris);
+        $user = DB::table('users')->count();
+        $produk = DB::table('produks')->count();
+        $kategori = DB::table('kategoris')->count();
+        return view('admin.kategori.index', compact('user', 'produk', 'kategori'))->with('kategoris', $kategoris); 
     }
 
     public function create()

@@ -4,6 +4,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AdminLTE 3 | Blank Page</title>
+    
+
+    <script src="{{ asset('qq/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('qq/js/popper.js') }}"></script>
+    <script src="{{ asset('qq/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('qq/js/main.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
 
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
@@ -20,14 +28,13 @@
     <!-- /.navbar -->
 
     <!-- Main Sidebar Container -->
-    @include('layouts.sidebar')
+    @include('layouts.left-sidebar')
 
     <!-- Content Wrapper. Contains page content -->
     <div style="background-color: black" class="content-wrapper">
         @yield('content')
     </div>
-    <!-- /.content-wrapper -->
-    @include('layouts.footer')
+
 
     <!-- Control Sidebar -->
     <aside class="control-sidebar control-sidebar-dark">
@@ -37,13 +44,5 @@
 </div>
 <!-- ./wrapper -->
 
-<!-- jQuery -->
-<script src="{{ asset('assets/plugins/jquery/jquery.min.js') }}"></script>
-<!-- Bootstrap 4 -->
-<script src="{{ asset('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-<!-- AdminLTE App -->
-<script src="{{ asset('assets/dist/js/adminlte.min.js') }}"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="{{ asset('assets/dist/js/demo.js') }}"></script>
 </body>
 </html>

@@ -1,23 +1,68 @@
 @extends('layouts.index')
 @section('content')
-<section class="content-header">
-    <div class="container-fluid">
-    </div><!-- /.container-fluid -->
-</section>
+
 <section class="content">
-    <!-- Default box -->
-    <<div class="card">
-        <div class="card-header">
-            <h3 class="card-title">Kategori Catering</h3><br>
-            <div class="card-tools">
-                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                    <i class="fas fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-                    <i class="fas fa-times"></i>
-                </button>
+    <div class="row">
+        <div class="col-4">
+            <div class="card border-left-danger shadow mb-1">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <a href="{{ route('produk.index') }}" class="text-decoration-none">
+                                    <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
+                                        Produk</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $produk }}</div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fas fa-hamburger fa-2x text-gray-300"></i>
+                            </div>
+                            </a>
+                        </div>
+                    </div>
             </div>
         </div>
+        <div class="col-4">
+            <div class="card border-left-danger shadow mb-1">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <a href="{{ route('produk.index') }}" class="text-decoration-none">
+                                    <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
+                                        User</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $user }}</div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fas fa-hamburger fa-2x text-gray-300"></i>
+                            </div>
+                            </a>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card border-left-danger shadow mb-1">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <a href="{{ route('produk.index') }}" class="text-decoration-none">
+                                    <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
+                                        Kategori</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $kategori }}</div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fas fa-hamburger fa-2x text-gray-300"></i>
+                            </div>
+                            </a>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="content">
+    <!-- Default box -->
+    <div class="card">
         <div class="card-body">
             <div class="col-md-12 d-flex flex-row justify-content-end" data-toggle="modal" data-target="#myModal">
                 <a class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus fa-sm text-white-50" style="margin-right: 5px;"></i>Input</a>

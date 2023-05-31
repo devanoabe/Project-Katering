@@ -1,20 +1,17 @@
 @extends('layouts.index')
-
+<head>
+    <link rel="stylesheet" href="{{asset('css/dashboard.css')}}">
+</head>
 @section('content')
-<div class="container-fluid">
-
-    <!-- Page Heading -->
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
-    </div>
-
+<div style="padding-left: 50px; padding-right: 50px; padding-top: 24px" class="container-fluid">
     <!-- Content Row -->
     <div class="row">
 
-        <!-- Earnings (Monthly) Card Example -->
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-primary shadow h-100 py-2">
+        <div class="col-xl-4 col-md-6">
+        <!-- Page Heading -->
+        <h1 style="letter-spacing: -2px; font-size: 40px;color: black;" class="mb-3">Dashboard Farhan <br> Catering</h1>
+        <p style="font-size: 13px;" class="mb-3">Fitur dashboard catering adalah sebuah antarmuka atau halaman yang dirancang khusus untuk memudahkan pengelolaan dan pengawasan layanan catering</p>
+            <div class="card border-left-primary shadow mb-1">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
@@ -30,10 +27,8 @@
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-danger shadow h-100 py-2">
+            <div class="card border-left-danger shadow mb-1">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
@@ -49,11 +44,8 @@
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Earnings (Monthly) Card Example -->
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-success shadow h-100 py-2">
+            <div class="card border-left-success shadow mb-1">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
@@ -67,10 +59,28 @@
                     </div>
                 </div>
             </div>
+
+            <div class="card border-left-warning shadow mb-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                Pending Requests</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-comments fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
 
+
         <!-- Earnings (Monthly) Card Example -->
-        <div class="col-xl-3 col-md-6 mb-4">
+        <!-- <div class="col-xl-3 col-md-6 mb-4">
             <div class="card border-left-info shadow h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
@@ -94,23 +104,30 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <!-- Pending Requests Card Example -->
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-warning shadow h-100 py-2">
+        <div class="col-xl-8 col-md-6 mb-3">
+            <div class="card border-left-warning h-100 shadow py-1 mt-2 fc">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                Pending Requests</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                            <div class="h5 mb-4">Selamat Datang</div>
+                            <div class="h2">
+                                <h5><i style="color: #ff7300" class="fa fa-user" aria-hidden="true"></i>{{ Auth::user()->name }}</h5>
+                                <h5><i class="fa fa-envelope" aria-hidden="true"></i>{{ Auth::user()->email }}</h5>
+                                <h5><i class="fa fa-phone" aria-hidden="true"></i>{{ Auth::user()->telepon }}</h5>
+                            </div>                          
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-comments fa-2x text-gray-300"></i>
                         </div>
                     </div>
                 </div>
+                <div class="btn center-block ps d-flex align-items-end mb-4 ml-5">
+                    <button type="button" id="animatebutton" class="btn btn-icon-text animatebutton"> 
+                    <i class="fa fa-check btn-icon-prepend"></i> CEK PESANAN </button>
+                </div> 
             </div>
         </div>
     </div>

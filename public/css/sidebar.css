@@ -1,27 +1,46 @@
 /* not active */
-.nav-pills .pill-1 .nav-link:not(.active) {
-    background-color: rgb(0, 0, 0);
+.nav-item-pill-1 .nav-link:not(.active) {
+    background-color: rgb(255, 255, 255);
 }
 
-.nav-pills .pill-2 .nav-link:not(.active) {
+.nav-item .pill-2 .nav-link:not(.active) {
     background-color: black;
 }
 
-.nav-pills .pill-3 .nav-link:not(.active) {
+.nav-item .pill-3 .nav-link:not(.active) {
     background-color: black;
 }
 
 
 /* active (faded) */
-.nav-pills .pill-1 .nav-link {
+.nav-item-pill-1 .nav-link {
+    background-color: #f3f4fb;
+    padding: 15px;
+}
+
+.nav-item .pill-2 .nav-link {
     background-color: #2c3136;
 }
 
-.nav-pills .pill-2 .nav-link {
+.nav-item .pill-3 .nav-link {
     background-color: #2c3136;
+
 }
 
-.nav-pills .pill-3 .nav-link {
-    background-color: #2c3136;
+.nav-pills .nav-link.active {
+    background-color: #f3f4fb;
+    width: 93%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bolder;
 
+  }
+  
+.nav-link[data-toggle].collapsed:after {
+    content: " ▾";
+}
+.nav-link[data-toggle]:not(.collapsed):after {
+    content: " ▴";
 }

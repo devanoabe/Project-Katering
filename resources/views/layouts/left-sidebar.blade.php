@@ -1,4 +1,8 @@
-<ul style="color: #fbf8f2;" class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar">
+<head>
+    <link rel="stylesheet" href="{{asset('css/sidebar.css')}}">
+</head>
+
+<ul style="color: #fbf8f2; border: 1px solid #ebedef;" class="navbar-nav sidebar nav-pills flex-column">
 
             <!-- Sidebar - Brand -->
             <a style="color: black;" class="sidebar-brand d-flex flex-column align-items-center justify-content-center my-4" href="">
@@ -14,14 +18,14 @@
                 </div>
             </a>
 
-            <!-- Divider -->use Illuminate\Support\Facades\DB;
+            <!-- Divider -->
             <hr style="border-color: #ebedef;"  class="sidebar-divider my-3">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
-                <a style="color: black; font-weight-bolder;" class="nav-link" href="{{ route('admin.beranda') }}">
-                    <i style="color: black;font-size: 15px;" class="fas fa-fw fa-tachometer-alt"></i>
-                    <span style="color: black;font-size: 15px;">Dashboard</span>
+            <li class="nav-item pill-1">
+                <a style="color: black;" href="{{ route('admin.beranda') }}" class="nav-link {{ (request()->routeIs('admin.beranda') ? 'active' : '') }}">
+                <i style="color: black;font-size: 15px;" class="fas fa-fw fa-tachometer-alt"></i>    
+                <span style="color: black;font-size: 15px;">Dashboard</span>
                 </a>
             </li>
 
@@ -30,23 +34,35 @@
 
             <!-- Heading -->
             <div style="color: #858796; font-size: 15px;" class="sidebar-heading my-2">
-                Fitur
+                Main Menu
             </div>
-
-            <li class="nav-item dropdown">
-                <a style="color: black;" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            
+            <li class="nav-item">
+                <a style="color: black" class="nav-link collapsed text-truncate" href="#submenu1" data-toggle="collapse" data-target="#submenu1">
                     <i style="color: black;" class="fas fa-fw fa-chart-area"></i>
                     <span style="color: black;">Kelola Data</span>
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a style="color: black;" class="dropdown-item" href="{{ route('admin.user') }}">User</a>
-                    <a style="color: black;" class="dropdown-item" href="{{ route('kategori.index') }}">Kategori</a>
-                    <a style="color: black;" class="dropdown-item" href="{{  route('produk.index')  }}">Produk</a>
-                </div>
-            </li>
-
+                    <div class="collapse" id="submenu1" aria-expanded="false">
+                        <ul class="flex-column pl-2 nav">
+                            <li class="nav-item">
+                                <a style="font-size: 15px" class="dropdown-item" href="{{ route('admin.user') }}">
+                                <i style="font-size: 7px; color: #4e73df; vertical-align: middle;" class="fa fa-circle pr-2" aria-hidden="true"></i>User</a>
+                            </li>
+                            <li class="nav-item">
+                                <a style="font-size: 15px"class="dropdown-item" href="{{ route('kategori.index') }}">
+                                <i style="font-size: 7px; color: #1cc88a; vertical-align: middle;" class="fa fa-circle pr-2" aria-hidden="true"></i>Kategori</a>
+                            </li>
+                            <li class="nav-item">
+                                <a style="font-size: 15px" class="dropdown-item" href="{{  route('produk.index')  }}">
+                                <i style="font-size: 7px; color: #36b9cc; vertical-align: middle;" class="fa fa-circle pr-2" aria-hidden="true"></i>Produk</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
             <li class="nav-item">
                 <a style="color: black;" class="nav-link" href="{{ route('pesanan.index') }}">
+            <li class="nav-item pill-3">
+                <a style="color: black;" href="{{ route('admin.user') }}" class="nav-link {{ (request()->routeIs('admin.user') ? 'active' : '') }}">
                     <i style="color: black;" class="fas fa-fw fa-table"></i>
                     <span>Pesanan</span></a>
             </li>
@@ -59,7 +75,7 @@
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
 
-            <li class="nav-item pill-3">
+            <li class="nav-item">
                     <a  style="color: #38373e; font-weight: bolder;" href="#" class="nav-link {{ (request()->routeIs('logout') ? 'active' : '') }}">
                         
                         <p style="color: black;" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">

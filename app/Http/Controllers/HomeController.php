@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Auth;
 use App\Models\Produk;
+use Auth;
 use App\Models\Pesanan;
 use App\Models\User;
 
@@ -45,6 +45,12 @@ class HomeController extends Controller
     public function welcome()
     {
         return view('welcome');
+    }
+
+    public function catering()
+    {
+        $produk = Produk::all();
+        return view('catering', compact('produk'));
     }
 
 }

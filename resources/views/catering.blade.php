@@ -36,6 +36,11 @@
             Silahkan lanjutkan untuk pemesanan
           </p>
         </h2>
+            Pembayaran
+            <p>
+              Silahkan lanjutkan untuk pemesanan
+            </p>
+          </h2>
         <button type="button" class="close" data-dismiss="modal">
           <i class="fas fa-times"></i>
         </button>
@@ -62,6 +67,24 @@
             </div>
           </div>
         </div>
+      </div>
+        <h2 style="text-align: center; font-size: 50px">0858-0046-0598</h2>
+      </div>
+      <div class="modal-footer">
+      <div class="container-fluid mb-4">
+        <div class="row">
+          <div class="col-6 text-left">
+            <button type="button" class="btn w-100 cls" data-dismiss="modal">Close</button>
+          </div>
+          <div class="col-6 text-right">
+            <button type="submit" class="btn w-100 sbt">
+              <a href="https://wa.me/6281339059398">
+                Hubungi
+              </a>
+            </button>
+          </div>
+        </div>
+      </div>
       </div>
     </div>
   </div>

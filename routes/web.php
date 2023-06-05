@@ -41,10 +41,7 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function(){
 });
 
 Route::get('/home', [HomeController::class, 'index'])->name('home.user');
-
-
 Route::get('/welcome', [HomeController::class, 'welcome'])->name('home.welcome');
-
 Route::get('/catering', [PesananController::class, 'catering'])->name('home.catering');
 Route::resource('pesanan', PesananController::class);
 Route::post('/updateStatus/{idPesanan}', [PesananController::class, 'updateStatus'])->name('pesanan.updateStatus');

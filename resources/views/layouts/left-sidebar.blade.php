@@ -59,10 +59,8 @@
                         </ul>
                     </div>
                 </li>
-            <li class="nav-item">
-                <a style="color: black;" class="nav-link" href="{{ route('pesanan.index') }}">
             <li class="nav-item pill-3">
-                <a style="color: black;" href="{{ route('admin.user') }}" class="nav-link {{ (request()->routeIs('admin.user') ? 'active' : '') }}">
+                <a style="color: black;" href="{{ route('pesanan.index') }}" class="nav-link {{ (request()->routeIs('pesanan.index')? 'active' : '') }}">
                     <i style="color: black;" class="fas fa-fw fa-table"></i>
                     <span>Pesanan</span></a>
             </li>

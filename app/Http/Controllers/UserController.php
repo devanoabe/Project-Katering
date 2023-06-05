@@ -22,7 +22,8 @@ class UserController extends Controller
     {   
         $user = DB::table('users')->count();
         $produk = DB::table('produks')->count();
-        return view('admin.dashboard', compact('user', 'produk'));
+        $pesanan = DB::table('pesanans')->count();
+        return view('admin.dashboard', compact('user', 'produk', 'pesanan'));
     }
 
     public function login(Request $request)

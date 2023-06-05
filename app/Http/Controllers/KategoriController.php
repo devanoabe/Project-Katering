@@ -14,7 +14,8 @@ class KategoriController extends Controller
         $user = DB::table('users')->count();
         $produk = DB::table('produks')->count();
         $kategori = DB::table('kategoris')->count();
-        return view('admin.kategori.index', compact('user', 'produk', 'kategori'))->with('kategoris', $kategoris); 
+        $pesanan = DB::table('pesanans')->count();
+        return view('admin.kategori.index', compact('user', 'produk', 'kategori', 'pesanan'))->with('kategoris', $kategoris); 
     }
 
     public function create()

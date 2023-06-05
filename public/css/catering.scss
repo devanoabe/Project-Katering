@@ -149,12 +149,13 @@ html {
 }
 
 .modal-footer {
+  display: flex;
+  justify-content: space-between;
   font-weight: bolder;
-  // margin: 12px;
 }
 
-.modal-footer span{
-  font-size: 25px;
+.modal-footer p {
+  font-size: 32px;
 }
 
 .wa{

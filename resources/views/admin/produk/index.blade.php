@@ -1,28 +1,45 @@
 @extends('layouts.index')
+
+<head>
+    <link rel="stylesheet" href="{{asset('css/produk.css')}}">
+</head>
+
 @section('content')
-<section class="content-header">
-    <div class="container-fluid">
-    </div><!-- /.container-fluid -->
-</section>
-<section class="content">
-    <!-- Default box -->
-    <div class="card">
-        <div class="card-header">
-            <h3 class="card-title">Produk Catering</h3><br>
-            <div class="card-tools">
-                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                    <i class="fas fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-                    <i class="fas fa-times"></i>
-                </button>
+<section style="padding-left: 50px; padding-right: 50px; padding-top: 20px;" class="content">
+<!-- Default box -->
+<h2 style="color:black; font-weight: bolder;" class="mb-0">Produk dan Foto</h2>
+<p>Managemen produk dan details </p>
+
+<div class="row">
+        <div class="col-md-6">
+            <div class="card p-3 mb-2">
+                <div class="d-flex justify-content-between">
+                    <div class="d-flex flex-row align-items-center">
+                        <div class="icon"> <i style="color: #f3b42d;"class="fas fa-hamburger fa-xs"></i> </div>
+                        <div class="ms-2 c-details pl-2">
+                            <h6 style="color: black; font-weight: bolder" class="mb-0">Produk</h6>
+                        </div>
+                    </div>
+                    <div class="badge"> <span>Product</span> </div>
+                </div>
+                <div class="mt-4 d-flex justify-content-between">
+                    <h5 class="heading">Product dari<br>Farhan Catering :</h5>
+                    <h1 style="color: black; font-weight: bolder; font-size: 50px">{{ $produk }}</h1>
+                </div>
+                <hr>
+                <div class="d-flex flex-row-reverse">
+                    <div class="p-2">Flex item 1</div>
+                </div>
             </div>
         </div>
-        <div class="card-body">
+</div>
+
             <div class="col-md-12 d-flex flex-row justify-content-end" data-toggle="modal" data-target="#myModal">
-                <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus fa-sm text-white-50" style="margin-right: 5px;"></i>Input</a>
+                <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                    <i class="fas fa-plus fa-sm text-white-50" style="margin-right: 5px;"></i>Input
+                </a>
             </div>
-            <table class="table">
+            <table style="background-color: white;" class="table table-borderless">
                 <thead>
                     <tr>
                         <th>ID Produk</th>
@@ -39,7 +56,7 @@
                     @foreach($produks as $p)
                     <tr>
                         <td>{{ $p -> idProduk}}</td>
-                        <td>{{ $p -> namaProduk}}</td>x
+                        <td>{{ $p -> namaProduk}}</td>
                         <td><img src="{{ asset('storage/'.$p->foto) }}" alt="Foto Produk" width="100"></td>
                         <td>{{ $p -> deskripsi}}</td>
                         <td><span>Rp. </span>{{ $p -> hargaProduk}}</td>
@@ -66,8 +83,8 @@
             <div class="col-md-12">
                 {{ $produks->links() }}
             </div>
-        </div>
-    </div>
+
+
 </section>
 <div class="modal fade" id="myModal">
     <div class="modal-dialog">

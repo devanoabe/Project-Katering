@@ -8,14 +8,16 @@ use App\Models\Produk;
 use App\Models\Kategori;
 use App\Models\User;
 use PDF;
+use Illuminate\Support\Facades\DB;
 
 class ProdukController extends Controller
 {
     public function index(){
+        $produk = DB::table('produks')->count();
         $produks = Produk::with('kategori')->paginate(3);
         $user = User::where('role', '=', "1")->get();
         $kategori = Kategori::all();
-        return view('admin.produk.index', compact('produks', 'user', 'kategori'));
+        return view('admin.produk.index', compact('produks', 'user', 'kategori', 'produk'));
     }
 
     public function create()
@@ -24,8 +26,8 @@ class ProdukController extends Controller
         $kategori = Kategori::all();
         return view('admin.produk.create', compact('user', 'kategori'));
     }
-
     public function store(Request $request)
+
     {
         //melakukan validasi data
         $request->validate([
@@ -46,9 +48,6 @@ class ProdukController extends Controller
             $produk ->foto=$imageName;
             $produk ->deskripsi = $request->get('deskripsi');
             $produk ->hargaProduk = $request->get('hargaProduk');
-            
-
-
             $produk->user_id = $request->get('user_id');
             $produk->kategori_id = $request->get('kategori_id');
 

@@ -26,6 +26,7 @@
     @endforeach
   </ul>
 </div>
+
 <div class="modal fade" id="pesanModal" tabindex="-1" role="dialog" aria-labelledby="exampleModelCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -36,11 +37,6 @@
             Silahkan lanjutkan untuk pemesanan
           </p>
         </h2>
-            Pembayaran
-            <p>
-              Silahkan lanjutkan untuk pemesanan
-            </p>
-          </h2>
         <button type="button" class="close" data-dismiss="modal">
           <i class="fas fa-times"></i>
         </button>
@@ -68,22 +64,7 @@
           </div>
         </div>
       </div>
-        <h2 style="text-align: center; font-size: 50px">0858-0046-0598</h2>
       </div>
-      <div class="modal-footer">
-      <div class="container-fluid mb-4">
-        <div class="row">
-          <div class="col-6 text-left">
-            <button type="button" class="btn w-100 cls" data-dismiss="modal">Close</button>
-          </div>
-          <div class="col-6 text-right">
-            <button type="submit" class="btn w-100 sbt">
-              <a href="https://wa.me/6281339059398">
-                Hubungi
-              </a>
-            </button>
-          </div>
-        </div>
       </div>
       </div>
     </div>
@@ -101,39 +82,46 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title">Tambah Pesanan</h4>
+        <i class="fa fa-flag-o" aria-hidden="true"></i>
+        <h2 class="modal-title">Tambah Pesanan
+        <p>Silahkan pilih tanggal dan jumlah pesanan</p>
+        </h2>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
       <div class="modal-body" style="color:black;">
         <form method="post" action="{{ route('pesanan.store') }}" id="myForm" enctype="multipart/form-data">
           @csrf
           <div class="form-group">
-            <label for="idProduk">ID Produk</label>
+            <label for="idProduk">Nama Produk :</label><br>
             <input type="hidden" name="idProduk" id="idProduk">
-            <span id="namaProduk"></span>
+            <p id="namaProduk"></p>
           </div>
           <div class="form-group">
-            <label for="tglPemesanan">Tanggal Pemesanan</label>
+            <label for="tglPemesanan">Tanggal Pemesanan</label><span>*</span>
             <input type="date" name="tglPemesanan" class="form-control" id="tglPemesanan" aria-describedby="tglPemesanan">
           </div>
           <div class="form-group">
-            <label for="tglPengambilan">Tanggal Pengambilan</label>
+            <label for="tglPengambilan">Tanggal Pengambilan</label><span>*</span>
             <input type="date" name="tglPengambilan" class="form-control" id="tglPengambilan" aria-describedby="tglPengambilan">
           </div>
           <div class="form-group">
-            <label for="jumlahPesanan">Jumlah Pesanan</label>
+            <label for="jumlahPesanan">Jumlah Pesanan</label><span>*</span>
             <input type="number" name="jumlahPesanan" class="form-control" id="jumlahPesanan" aria-describedby="jumlahPesanan">
           </div>
-          <div class="form-group">
-            <label for="totalHarga">Total Harga</label>
-            <span id="totalHarga"></span>
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      <div class="modal-footer justify-content-between">
+          <label for="totalHarga">Total Harga</label>
+          <p id="totalHarga"></p>
       </div>
+      <div class="row p-3">
+        <div class="col-2">
+          <button style="border: 1px solid black; color: black" type="button" class="btn" data-dismiss="modal">Close</button>
+        </div>
+        <div class="col-10">
+        <button style="background-color: black; color: white" type="submit" class="btn  w-100">Submit</button>
+        </div>
+      </div>
+      </form>
     </div>
   </div>
 </div>

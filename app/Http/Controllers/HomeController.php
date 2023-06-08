@@ -53,4 +53,29 @@ class HomeController extends Controller
         return view('catering', compact('produk'));
     }
 
+    public function status()
+    {
+        // Mendapatkan user yang sedang login
+        $user = Auth::user();
+        // Mendapatkan pesanan berdasarkan user yang sedang login
+        $pesanan = Pesanan::where('user_id', $user->id)->get();
+        $produks = Produk::with('kategori')->get();
+        $user = User::where('role', '=', "1")->get();
+        return view('pesanan', compact('pesanan', 'produks', 'user'));
+    }
+
+    public function riwayat()
+    {
+        // Mendapatkan user yang sedang login
+        $user = Auth::user();
+        // Mendapatkan pesanan berdasarkan user yang sedang login
+        $pesanan = Pesanan::where('user_id', $user->id)
+                   ->where('status', 'selesai')
+                   ->get();
+
+        $produks = Produk::with('kategori')->get();
+        $user = User::where('role', '=', "1")->get();
+        return view('riwayat', compact('pesanan', 'produks', 'user'));
+    }
+
 }

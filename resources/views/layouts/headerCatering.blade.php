@@ -17,6 +17,12 @@
               <ul>
                   <li><a class="nav-link" href="{{ route('home.catering') }}">Catering</a></li>
               </ul>
+              <ul>
+                  <li><a class="nav-link" href="{{ route('home.status') }}">Pesanan</a></li>
+              </ul>
+              <ul>
+                  <li><a class="nav-link" href="{{ route('home.riwayat') }}">Riwayat</a></li>
+              </ul>
 
               <i class="bi bi-list mobile-nav-toggle"></i>
           </nav><!-- .navbar -->

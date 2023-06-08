@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Pesanan;
 use App\Models\Produk;
 use App\Models\User;
+use PDF;
+use Illuminate\Http\Response;
 
 class PesananController extends Controller
 {
@@ -65,5 +67,28 @@ class PesananController extends Controller
         $pesanan->save();
 
         return redirect()->route('home.catering')->with('showModal', true);
+    }
+
+    public function destroy($idPesanan)
+    {
+        Pesanan::find($idPesanan)->delete();
+        return redirect()->route('pesanan.index')
+            -> with('success', 'Pesanan Catering Berhasil Dihapus');
+    }
+
+    public function laporan()
+    {
+        $laporan = Pesanan::where('status', '=', 'selesai')->get();
+        return view('admin.laporan.index', compact('laporan'));
+    }
+
+    public function cetakPDF(Request $request)
+    {
+        $laporan = Pesanan::where('status', '=', 'selesai')->get();
+        $pdf = PDF::loadView('admin.laporan.cetak_pdf', compact('laporan'))->setOptions(['defaultFont' => 'sans-serif']);
+        $pdfContent = $pdf->output();
+        $response = new Response($pdfContent);
+        $response->headers->set('Content-Type', 'application/pdf');
+        return $response;
     }
 }

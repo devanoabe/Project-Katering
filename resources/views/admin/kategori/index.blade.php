@@ -7,7 +7,7 @@
 @section('content')
 
 <section style="padding-left: 50px; padding-right: 50px;" class="content">
-<h1 style="color:black; font-weight: bolder;">Live Update</h1>
+<h2 style="color:black; font-weight: bolder;">Live Update</h2>
     <div class="row">
     
         <div class="col-4">

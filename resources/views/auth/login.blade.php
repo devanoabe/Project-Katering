@@ -75,7 +75,6 @@
                                         <a class="nav-link" href="{{ route('register') }}">{{ __('Belum Punya Akun') }}
                                             <span><i class="fa-solid fa-share fa-lg p-1"></i></span>
                                         </a>
-
                                         @endif
                                     </button>
                                     @endguest

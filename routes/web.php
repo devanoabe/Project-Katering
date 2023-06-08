@@ -37,7 +37,8 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function(){
     Route::resource('kategori', KategoriController::class);
     Route::get('/produk/exportPDF', [ProdukController::class, 'exportPDF'])->name('exportPDF');
     Route::resource('produk', ProdukController::class);
-   
+    Route::get('/laporan', [PesananController::class, 'laporan'])->name('laporan');
+    Route::get('/cetakPDF', [PesananController::class, 'cetakPDF'])->name('cetakPDF');
 });
 
 Route::get('/home', [HomeController::class, 'index'])->name('home.user');
@@ -46,6 +47,9 @@ Route::get('/catering', [PesananController::class, 'catering'])->name('home.cate
 Route::resource('pesanan', PesananController::class);
 Route::post('/updateStatus/{idPesanan}', [PesananController::class, 'updateStatus'])->name('pesanan.updateStatus');
 Route::get('/catering', [HomeController::class, 'catering'])->name('home.catering');
+Route::get('/status', [HomeController::class, 'status'])->name('home.status');
+Route::get('/riwayat', [HomeController::class, 'riwayat'])->name('home.riwayat');
+
 
 
 //User Route

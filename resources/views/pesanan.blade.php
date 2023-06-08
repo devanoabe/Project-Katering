@@ -1,4 +1,4 @@
-@extends('layouts.index')
+@extends('layouts.indexCatering')
 
 <head>
     <link rel="stylesheet" href="{{asset('css/pesanan.css')}}">
@@ -11,14 +11,14 @@
 </section>
 <section style="padding-left: 50px; padding-right: 50px;" class="content">
             <p class="mb-0"><i class="fa fa-credit-card mr-2" aria-hidden="true"></i>Dashboard</p>
-            <h2 class="mb-5" style="color:black; font-weight: bolder;">Pesanan</h2>
+            <h2 class="mb-5" style="color:white; font-weight: bolder;">Pesanan</h2>
         @foreach($pesanan as $p)
         <div class="col-md-12">
             <div class="card p-3 mb-2">
                 <div class="d-flex justify-content-between">
                     <div class="d-flex flex-row align-items-center">
                         <div class="ms-2 c-details">
-                            <h4 style="color: #978c9a; font-weight: bolder" class="mb-0"># {{ $p->idPesanan }} - 
+                            <h4 style="color: #978c9a; font-weight: bolder" class="mb-0">
                                 <span style="color: black; margin-right: 5px">{{ $p->user->name }}</span>
                                 <span id="status{{ $p->idPesanan }}" class="{{ $p->status === 'selesai' ? 'text-suc' : 'text-dan' }}">
                                     @if ($p->status === 'selesai')
@@ -28,20 +28,14 @@
                                     @endif
                                     {{ $p->status }}
                                 </span>
+                                @if ($p->status === 'selesai')
+                                    <span>{{ $p->updated_at->format('Y-m-d') }}</span>
+                                @endif
                             </h4>
                         </div>
                     </div>
-                    <div class="badge"> 
-                        <form action="{{ route('pesanan.destroy', $p->idPesanan) }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn">
-                                <i class="fa fa-trash" aria-hidden="true"></i>
-                            </button>
-                        </form>
-                    </div>
                 </div>
-                <div class="mt-4 d-flex flex-row ">
+                <div style="color: black;" class="mt-4 d-flex flex-row mr-4">
                     <h6 class="heading mr-4"><i class="fa fa-bookmark mr-2" aria-hidden="true"></i>{{ $p->idProduk }}</h6>
                     <h6 class="heading mr-4"><i class="fa fa-calendar mr-2" aria-hidden="true"></i>Pemesanan : {{ $p->tglPemesanan }}</h6>
                     <h6 class="heading mr-4"><i class="fa fa-calendar mr-2" aria-hidden="true"></i>Pengambilan : {{ $p->tglPengambilan }}</h6>
@@ -50,10 +44,6 @@
                 <hr>
                 <div class="d-flex justify-content-between">
                     <h4 style="color: black; font-weight: bold">Total Rp. {{ $p->totalHarga }}</h4>
-                    <form action="{{ route('pesanan.updateStatus', $p->idPesanan) }}" method="POST">
-                        @csrf
-                        <button type="submit" class="btn btn-success activate-button" data-id="{{ $p->idPesanan }}">Selesai</button>
-                    </form>
                 </div>
             </div>
         </div>

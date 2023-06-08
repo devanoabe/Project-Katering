@@ -56,6 +56,7 @@
                                 <a style="font-size: 15px" class="dropdown-item" href="{{  route('produk.index')  }}">
                                 <i style="font-size: 7px; color: #36b9cc; vertical-align: middle;" class="fa fa-circle pr-2" aria-hidden="true"></i>Produk</a>
                             </li>
+    
                         </ul>
                     </div>
                 </li>
@@ -63,6 +64,11 @@
                 <a style="color: black;" href="{{ route('pesanan.index') }}" class="nav-link {{ (request()->routeIs('pesanan.index')? 'active' : '') }}">
                     <i style="color: black;" class="fas fa-fw fa-table"></i>
                     <span>Pesanan</span></a>
+            </li>
+            <li class="nav-item pill-3">
+                <a style="color: black;" href="{{ route('laporan') }}" class="nav-link {{ (request()->routeIs('laporan')? 'active' : '') }}">
+                    <i style="color: black" class="fa fa-print" aria-hidden="true"></i>
+                    <span>Laporan</span></a>
             </li>
 
             <!-- Divider -->

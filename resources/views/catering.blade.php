@@ -43,6 +43,9 @@
       </div>
       <div class="modal-body img" style="justify-content: center; align-items: center;">
         <img src="../assets/img/logo.png" style="width: 500px; height: auto;">
+        <p style="text-align: center; color: red;">
+          *Untuk Layanan Pengiriman dapat melakukan konfirmasi
+        </p>
         <p style="text-align: left">
           Nomor Telepon
         </p>
@@ -56,8 +59,8 @@
             </div>
             <div class="col-6 text-right">
               <button type="submit" class="btn w-100 sbt">
-                <a href="https://wa.me/6281339059398">
-                  Hubungi
+                <a style="color: white" href="https://wa.me/6281339059398">
+                  <i style="font-size:18px; margin-right: 8px" class="fa fa-whatsapp"></i>Hubungi
                 </a>
               </button>
             </div>
@@ -66,10 +69,11 @@
       </div>
       </div>
       </div>
-      </div>
+      </div> 
     </div>
   </div>
 </div>
+
 @if(session('showModal'))
 <script>
   $(document).ready(function() {
@@ -125,6 +129,9 @@
     </div>
   </div>
 </div>
+
+<div id="preloader"></div>
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 <script>
   $(document).ready(function() {
     $('.button').on('click', function() {

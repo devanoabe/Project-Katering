@@ -10,91 +10,94 @@
     </div><!-- /.container-fluid -->
 </section>
 <section style="padding-left: 50px; padding-right: 50px;" class="content">
-            <p class="mb-0"><i class="fa fa-credit-card mr-2" aria-hidden="true"></i>Dashboard</p>
-            <h2 class="mb-5" style="color:white; font-weight: bolder;">Pesanan</h2>
-        @foreach($pesanan as $p)
-        <div class="col-md-12">
-            <div class="card p-3 mb-2">
-                <div class="d-flex justify-content-between">
-                    <div class="d-flex flex-row align-items-center">
-                        <div class="ms-2 c-details">
-                            <h4 style="color: #978c9a; font-weight: bolder" class="mb-0">
-                                <span style="color: black; margin-right: 5px">{{ $p->user->name }}</span>
-                                <span id="status{{ $p->idPesanan }}" class="{{ $p->status === 'selesai' ? 'text-suc' : 'text-dan' }}">
-                                    @if ($p->status === 'selesai')
-                                        <i class="fas fa-check-circle fa-xs"></i> <!-- Font Awesome check-circle icon -->
-                                    @else
-                                        <i class="fas fa-exclamation-circle fa-xs"></i> <!-- Font Awesome exclamation-circle icon -->
-                                    @endif
-                                    {{ $p->status }}
-                                </span>
-                                @if ($p->status === 'selesai')
-                                    <span>{{ $p->updated_at->format('Y-m-d') }}</span>
-                                @endif
-                            </h4>
-                        </div>
-                    </div>
-                </div>
-                <div style="color: black;" class="mt-4 d-flex flex-row mr-4">
-                    <h6 class="heading mr-4"><i class="fa fa-bookmark mr-2" aria-hidden="true"></i>{{ $p->idProduk }}</h6>
-                    <h6 class="heading mr-4"><i class="fa fa-calendar mr-2" aria-hidden="true"></i>Pemesanan : {{ $p->tglPemesanan }}</h6>
-                    <h6 class="heading mr-4"><i class="fa fa-calendar mr-2" aria-hidden="true"></i>Pengambilan : {{ $p->tglPengambilan }}</h6>
-                    <h6 class="heading mr-4"><i class="fa fa-inbox mr-2" aria-hidden="true"></i>Jumlah : {{ $p->jumlahPesanan }}</h6>
-                </div>
-                <hr>
-                <div class="d-flex justify-content-between">
-                    <h4 style="color: black; font-weight: bold">Total Rp. {{ $p->totalHarga }}</h4>
-                </div>
+    <h1 class="mb-0 judul" style="font-weight: bolder;">Pesanan <span>&</span> Status</h1>
+    <h1 class="mb-5 judul" style="font-weight: bolder; margin-top: -20px">history dari semua pesanan</h1>
+    <div class="row justify-content-end p-3">
+        <div class="card" style="width: 13rem; margin-right: 20px; background-color: #1a1814">
+            <div style="color: white;" class="card-body">
+                <h3 style="font-weight: bolder;" class="card-title mb-0">Pesanan</h3>
+                <p style="font-size: 14px" class="mb-0">Total pesanan : </p>
+                <h1 style="font-weight: bolder; color: #cda45e; font-size: 62px; margin-bottom: 30px" class="card-text hr">{{ $pesan }}</h1>
+                <a style="background-color: white; color: black" href="{{ route('home.catering') }}" class="btn btn-dark w-100">Pesan Lagi?</a>
             </div>
         </div>
-        @endforeach
-        <!-- <div class="card-body">
-            <table class="table">
+        <div class="card" style="width: 13rem; margin-right: 20px; background-color: #1a1814">
+            <div style="color: white;" class="card-body">
+                <h3 style="font-weight: bolder;" class="card-title mb-0">Riwayat</h3>
+                <p style="font-size: 14px" class="mb-0">Total riwayat : </p>
+                <h1 style="font-weight: bolder; color: #cda45e; font-size: 62px; margin-bottom: 30px" class="card-text hr">{{ $riwayat }}</h1>
+                <a style="background-color: white; color: black" href="{{ route('home.riwayat') }}" class="btn w-100">Lihat Riwayat</a>
+            </div>
+        </div>
+    </div>
+        <div style="margin-top: 80px" class="card-body">
+            <table style="color: white" class="table">
                 <thead>
                     <tr>
-                        <th>ID Pesanan</th>
-                        <th>ID User</th>
-                        <th>ID Produk</th>
-                        <th>Tanggal Pemesanan</th>
-                        <th>Tanggal Pengambilan</th>
-                        <th>Jumlah Pesanan</th>
-                        <th>Total Harga</th>
-                        <th>Status</th>
-                        <th width="280px">Action</th>
+                        <th style=" width: 250px">Tanggal <i class="fa fa-calendar-o" aria-hidden="true"></i></th>
+                        <th>User</th>
+                        <th style=" width: 340px">Produk</th>
+                        <th style=" width: 190px" class="center">Jumlah</th>
+                        <th>Status <i class="fa fa-arrow-down" aria-hidden="true"></i></th>
+                        <th class="center">Total Harga</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach($pesanan as $p)
                     <tr>
-                        <td>{{ $p->idPesanan }}</td>
-                        <td>{{ $p->user->id }}</td>
-                        <td>{{ $p->idProduk }}</td>
-                        <td>{{ $p->tglPemesanan }}</td>
-                        <td>{{ $p->tglPengambilan }}</td>
-                        <td>{{ $p->jumlahPesanan }}</td>
-                        <td>{{ $p->totalHarga }}</td>
-                        <td id="status{{ $p->idPesanan }}">{{ $p->status }}</td>
                         <td>
-                            <div style="display: flex; gap: 10px;">
-                                <form action="{{ route('pesanan.destroy', $p->idPesanan) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger">Delete</button>
-                                </form>
-                                <form action="{{ route('pesanan.updateStatus', $p->idPesanan) }}" method="POST">
-                                    @csrf
-                                    <button type="submit" class="btn btn-success activate-button" data-id="{{ $p->idPesanan }}">Activate</button>
-                                </form>
+                            <div class="d-flex flex-row align-items-center mb-2">
+                                <div class="text-center tgl-p">
+                                    <span style="font-weight: bold;">{{ date('d', strtotime($p->tglPemesanan)) }}</span><br>
+                                    <span>{{ date('F', strtotime($p->tglPemesanan)) }}</span>
+                                </div>
+                                <p style="margin-left: 5px; margin-top: 12px">
+                                    <i style="font-size: 6px; color: red" class="fa fa-circle" aria-hidden="true"></i>
+                                    Pemesanan
+                                </p>
                             </div>
-
+                            <div class="d-flex flex-row align-items-center mb-2">
+                                <div class="text-center tgl-pp">
+                                    <span style="font-weight: bold;">{{ date('d', strtotime($p->tglPengambilan)) }}</span><br>
+                                    <span>{{ date('F', strtotime($p->tglPengambilan)) }}</span>
+                                </div>
+                                <p style="margin-left: 5px; margin-top: 12px">
+                                    <i style="font-size: 6px; color: green" class="fa fa-circle" aria-hidden="true"></i>
+                                    Pengambilan
+                                </p>
+                            </div>
                         </td>
+                        <td>
+                            <div class="d-flex flex-row align-items-center pt-5">
+                                <img style="width: 45px; height: auto; margin-right: 12px" class="img-profile rounded-circle" src="{{asset('assets/img/undraw_profile_3.svg')}}">
+                                {{ $p->user->name }} <br>
+                                {{ $p->user->email }}
+                            </div>
+                        </td>
+                        <td>
+                            <div class="pt-2">
+                                <i style="margin-right: 10px; margin-bottom: 10px;" 
+                                class="fa fa-cutlery" aria-hidden="true"></i>{{ $p->produk->namaProduk }} <br>
+                                <p style="color: gray" class="mb-0">Isian : </p>
+                                <p style="font-size: 12px">{{ $p->produk->deskripsi }}</p> 
+                            </div>
+                        </td>
+                        <td style="font-size: 28px" class="center pt-5">{{ $p->jumlahPesanan }}</td>
+                        <td style="padding-top: 60px">
+                            <span id="status{{ $p->idPesanan }}" class="{{ $p->status === 'selesai' ? 'text-suc' : 'text-dan' }}">
+                                {{ $p->status }}
+                            </span>
+                        </td>
+                        <td style="font-size: 28px" class="center pt-5">Rp. {{ $p->totalHarga }}</td>
                     </tr>
                     @endforeach
                 </tbody>
             </table>
-        </div> -->
-
+        </div>
 </section>
+
+<div id="preloader"></div>
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 @section('scripts')
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>

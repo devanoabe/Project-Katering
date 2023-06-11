@@ -7,6 +7,7 @@ use App\Models\Produk;
 use Auth;
 use App\Models\Pesanan;
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -60,8 +61,14 @@ class HomeController extends Controller
         // Mendapatkan pesanan berdasarkan user yang sedang login
         $pesanan = Pesanan::where('user_id', $user->id)->get();
         $produks = Produk::with('kategori')->get();
-        $user = User::where('role', '=', "1")->get();
-        return view('pesanan', compact('pesanan', 'produks', 'user'));
+        // $user = User::where('role', '=', "1")->get();
+        $pesan = Pesanan::where('user_id', $user->id)->count();
+
+        $riwayat = Pesanan::where('user_id', $user->id)
+                   ->where('status', 'selesai')
+                   ->count();
+
+        return view('pesanan', compact('pesanan', 'produks', 'user', 'pesan', 'riwayat'));
     }
 
     public function riwayat()
@@ -72,7 +79,6 @@ class HomeController extends Controller
         $pesanan = Pesanan::where('user_id', $user->id)
                    ->where('status', 'selesai')
                    ->get();
-
         $produks = Produk::with('kategori')->get();
         $user = User::where('role', '=', "1")->get();
         return view('riwayat', compact('pesanan', 'produks', 'user'));

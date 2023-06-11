@@ -10,7 +10,7 @@
             <h1 style="color:black; font-weight: bolder; text-align:">User</h1>
             <p style="font-size: 13px;  width: 80%"> 
                 Dalam daftar ini memberikan informasi tentang pengguna, seperti nama, alamat email, dan peran pengguna.</p>
-        </div>
+        </div>  
 
         <div class="col-9">
             

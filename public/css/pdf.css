@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Alice&family=Nanum+Gothic&family=Roboto+Flex&display=swap');
+
+    .row {
+        display: flex;
+        justify-content: space-between;
+    }
+    .col-6 {
+        flex-basis: 50%;
+    }
+
+    .total {
+        margin-top: -300px;
+    }
+
+    .kiri h3{
+        font-family: 'Roboto Flex', sans-serif;
+    }
+
+    .icon {
+        background-size: 24px 24px; /* Adjust the size of the icon */
+        width: 24px;
+        height: 24px;
+      }
+      
+      
+      
+      
+      
+      
+      
+      

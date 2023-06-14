@@ -19,11 +19,25 @@ class UserController extends Controller
     }
 
     public function dashboard()
-    {   
+    {
         $user = DB::table('users')->count();
         $produk = DB::table('produks')->count();
-        $pesanan = DB::table('pesanans')->count();
-        return view('admin.dashboard', compact('user', 'produk', 'pesanan'));
+        $pesanans = DB::table('pesanans')->count();
+        $income = DB::table('pesanans')
+            ->selectRaw('SUM(totalHarga)AS income')
+            ->value('income');
+
+        $pemasukan = DB::table('pesanans')
+            ->selectRaw('SUM(totalHarga) AS pemasukan')
+            ->value('pemasukan');
+
+        $dataPemasukan = DB::table('pesanans')
+            ->select(DB::raw('MONTH(tglPemesanan) AS Bulan, SUM(totalHarga) AS TotalPemasukan'))
+            ->groupBy('Bulan')
+            ->orderBy('Bulan')
+            ->get();
+        // dd($dataPemasukan);
+        return view('admin.dashboard', compact('user', 'produk', 'income', 'pemasukan', 'dataPemasukan', 'pesanans'));
     }
 
     public function login(Request $request)

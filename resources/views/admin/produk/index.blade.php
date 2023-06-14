@@ -76,8 +76,8 @@
                     </div>
                 </div>
                 <a style="background-color: black; color: white; padding: 10px; height: 50%;" href="{{ route('exportPDF') }}" class="d-none d-sm-inline-block btn btn-sm shadow-sm">
-                    <i class="fas fa-download fa-sm text-white-50" style="margin-right: 5px; padding 20px"></i>Cetak ke PDF</a>
-            </div>
+                   <i class="fas fa-download fa-sm text-white-50" style="margin-right: 5px; padding 20px"></i>Cetak ke PDF</a>
+            </div> 
             </div>
             <table style="background-color: white;" class="table table-borderless">
                 <thead>

@@ -6,7 +6,10 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Pesanan;
 use App\Models\Produk;
+use Illuminate\Pagination\Paginator;
+use Illuminate\Pagination\LengthAwarePaginator;
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
 use PDF;
 use Illuminate\Http\Response;
 
@@ -76,19 +79,87 @@ class PesananController extends Controller
             -> with('success', 'Pesanan Catering Berhasil Dihapus');
     }
 
-    public function laporan()
+    public function laporan(Request $request)
     {
-        $laporan = Pesanan::where('status', '=', 'selesai')->get();
-        return view('admin.laporan.index', compact('laporan'));
+        $mulai = $request->input('tgl_mulai');
+        $selesai = $request->input('tgl_selesai');
+
+        if ($request->has('filter_tgl')) {
+            $request->session()->put('tgl_mulai', $mulai);
+            $request->session()->put('tgl_selesai', $selesai);
+        } elseif ($request->has('reset_filter')) {
+            $request->session()->forget('tgl_mulai');
+            $request->session()->forget('tgl_selesai');
+        }
+
+        $filterMulai = $request->session()->get('tgl_mulai');
+        $filterSelesai = $request->session()->get('tgl_selesai');
+
+        $query = Pesanan::where('status', '=', 'selesai');
+
+        if ($filterMulai && $filterSelesai) {
+            $query->whereBetween('pesanans.tglPemesanan', [$filterMulai, $filterSelesai]);
+        }
+
+        $laporan = $query->get();
+
+        // Menghitung jumlah item per halaman
+        $perPage = 5;
+
+        // Mendapatkan nomor halaman saat ini dari query string (?page=)
+        $currentPage = Paginator::resolveCurrentPage();
+
+        // Membuat instance LengthAwarePaginator dengan data, jumlah item per halaman, dan halaman saat ini
+        $laporanPaginator = new LengthAwarePaginator(
+            $laporan->forPage($currentPage, $perPage),
+            $laporan->count(),
+            $perPage,
+            $currentPage,
+            ['path' => Paginator::resolveCurrentPath()]
+        );
+
+        $filter = null;
+        if ($filterMulai && $filterSelesai) {
+            $filter = $laporan;
+        }
+
+        return view('admin.laporan.index', compact('laporan', 'laporanPaginator', 'filter'));
     }
 
     public function cetakPDF(Request $request)
     {
+        $mulai = $request->session()->get('tgl_mulai');
+        $selesai = $request->session()->get('tgl_selesai');
+
+        $filter = Pesanan::where('status', '=', 'selesai')
+            ->when($mulai && $selesai, function ($query) use ($mulai, $selesai) {
+                return $query->whereBetween('pesanans.tglPemesanan', [$mulai, $selesai]);
+            })
+            ->get();
+
         $laporan = Pesanan::where('status', '=', 'selesai')->get();
-        $pdf = PDF::loadView('admin.laporan.cetak_pdf', compact('laporan'))->setOptions(['defaultFont' => 'sans-serif']);
+
+        $masuk = DB::table('pesanans')
+            ->select('tglPemesanan')
+            ->orderBy('tglPemesanan', 'asc')
+            ->get();
+
+        // Mendapatkan tanggal pertama
+        $tanggalPertama = $masuk->first()->tglPemesanan;
+
+        // Mendapatkan tanggal terakhir
+        $tanggalTerakhir = $masuk->last()->tglPemesanan;
+
+        $totalHargaLaporan = $laporan->sum('totalHarga');
+        $totalHargaFilter = $filter->sum('totalHarga');
+
+        $jumlahLaporan = $laporan->count();
+        $jumlahFilter = $filter->count();
+
+        $pdf = PDF::loadView('admin.laporan.cetak_pdf', compact('laporan', 'filter', 'mulai', 'selesai', 'tanggalPertama', 'tanggalTerakhir', 'totalHargaLaporan', 'totalHargaFilter', 'jumlahLaporan', 'jumlahFilter'))->setOptions(['defaultFont' => 'sans-serif']);
         $pdfContent = $pdf->output();
         $response = new Response($pdfContent);
-        $response->headers->set('Content-Type', 'application/pdf');
+        $response->header('Content-Type', 'application/pdf');
         return $response;
     }
 }

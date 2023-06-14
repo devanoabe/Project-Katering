@@ -9,7 +9,6 @@
 <section style="padding-left: 50px; padding-right: 50px;" class="content">
 <h2 style="color:black; font-weight: bolder;">Live Update</h2>
     <div class="row">
-    
         <div class="col-4">
             <div class="card shadow mb-1">
                     <div class="card-body">

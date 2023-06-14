@@ -54,23 +54,30 @@ class HomeController extends Controller
         return view('catering', compact('produk'));
     }
 
-    public function status()
+    public function status(Request $request)
     {
-        // Mendapatkan user yang sedang login
         $user = Auth::user();
-        // Mendapatkan pesanan berdasarkan user yang sedang login
-        $pesanan = Pesanan::where('user_id', $user->id)->get();
-        $produks = Produk::with('kategori')->get();
-        // $user = User::where('role', '=', "1")->get();
-        $pesan = Pesanan::where('user_id', $user->id)->count();
+        $keyword = $request->query('keyword');
 
+        $pesananQuery = Pesanan::where('user_id', $user->id);
+        $produks = Produk::with('kategori')->get();
+        $pesan = Pesanan::where('user_id', $user->id)->count();
         $riwayat = Pesanan::where('user_id', $user->id)
-                   ->where('status', 'selesai')
-                   ->count();
+            ->where('status', 'selesai')
+            ->count();
+
+        // Jika terdapat keyword pencarian, tambahkan kondisi pencarian pada query pesanan
+        if ($keyword) {
+            $pesananQuery->whereHas('produk', function ($query) use ($keyword) {
+                $query->where('namaProduk', 'LIKE', "%{$keyword}%");
+            });
+        }
+
+        $pesanan = $pesananQuery->get();
 
         return view('pesanan', compact('pesanan', 'produks', 'user', 'pesan', 'riwayat'));
     }
-
+    
     public function riwayat()
     {
         // Mendapatkan user yang sedang login

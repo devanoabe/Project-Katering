@@ -17,7 +17,7 @@
             <p>{{$p->deskripsi}}</p>
             <p>Rp. {{$p->hargaProduk}}</p>
           </div>
-          <div class="button" data-toggle="modal" data-target="#pesan" data-produk-id="{{ $p->idProduk }}" data-produk-nama="{{ $p->namaProduk }}" data-produk-harga="{{ $p->hargaProduk }}">
+          <div class="button" id="pesanSekarang" data-toggle="modal" data-target="#pesan" data-produk-id="{{ $p->idProduk }}" data-produk-nama="{{ $p->namaProduk }}" data-produk-harga="{{ $p->hargaProduk }}">
             <span style="margin-right:12px;"><i class="fa-solid fa-basket-shopping"></i></span> Pesan Sekarang
           </div>
         </div>
@@ -122,13 +122,14 @@
           <button style="border: 1px solid black; color: black" type="button" class="btn" data-dismiss="modal">Close</button>
         </div>
         <div class="col-10">
-        <button style="background-color: black; color: white" type="submit" class="btn  w-100">Submit</button>
+          <button style="background-color: black; color: white" type="submit" class="btn w-100 sb" id="submit">Submit</button>
         </div>
       </div>
       </form>
     </div>
   </div>
 </div>
+
 
 <div id="preloader"></div>
 <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>

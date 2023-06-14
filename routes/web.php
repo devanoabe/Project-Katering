@@ -30,15 +30,15 @@ Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function(){
+    Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function(){
     Route::get('/beranda', [UserController::class, 'dashboard'])->name('admin.beranda');
     // Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('admin.dashboard');
     Route::get('/user', [UserController::class, 'index'])->name('admin.user');
     Route::resource('kategori', KategoriController::class);
     Route::get('/produk/exportPDF', [ProdukController::class, 'exportPDF'])->name('exportPDF');
     Route::resource('produk', ProdukController::class);
-    Route::get('/laporan', [PesananController::class, 'laporan'])->name('laporan');
-    Route::get('/cetakPDF', [PesananController::class, 'cetakPDF'])->name('cetakPDF');
+    Route::match(['get','post'],'/laporan', [PesananController::class, 'laporan'])->name('laporan');
+    Route::match(['get','post'],'/exportPDF', [PesananController::class, 'cetakPDF'])->name('cetakPDF');
 });
 
 Route::get('/home', [HomeController::class, 'index'])->name('home.user');

@@ -11,20 +11,52 @@
 
 
           <nav id="navbar" class="navbar order-last order-lg-0">
-              <ul>
-                  <li><a class="nav-link" href="{{ route('home.welcome') }}">Home</a></li>
-              </ul>
-              <ul>
-                  <li><a class="nav-link" href="{{ route('home.catering') }}">Catering</a></li>
-              </ul>
-              <ul>
-                  <li><a class="nav-link" href="{{ route('home.status') }}">Pesanan</a></li>
-              </ul>
-              <ul>
-                  <li><a class="nav-link" href="{{ route('home.riwayat') }}">Riwayat</a></li>
-              </ul>
+            <ul>
+                <li><a class="nav-link" href="{{ route('home.welcome') }}">Home</a></li>
+            </ul>
+            <ul>
+                <li><a class="nav-link" href="{{ route('home.catering') }}">Catering</a></li>
+            </ul>
+            <ul>
+                <li><a class="nav-link" href="{{ route('home.status') }}">Pesanan</a></li>
+            </ul>
+            <ul>
+                <li><a class="nav-link" href="{{ route('home.riwayat') }}">Riwayat</a></li>
+            </ul>
 
-              <i class="bi bi-list mobile-nav-toggle"></i>
+            <!-- <script>
+                function checkLogin(event) {
+                event.preventDefault(); // Menghentikan perilaku default dari tautan
+
+                // Cek apakah pengguna sudah login atau belum
+                var isLoggedIn = checkUserLoggedIn(); // Fungsi ini harus didefinisikan sesuai dengan kebutuhan Anda
+
+                if (isLoggedIn) {
+                    // Jika pengguna sudah login, maka arahkan ke halaman yang ditautkan
+                    window.location.href = event.target.href;
+                } else {
+                    // Jika pengguna belum login, tampilkan pop-up atau arahkan ke halaman login
+                    alert("Anda harus login dahulu!");
+                    // Atau, Anda dapat mengarahkan pengguna ke halaman login dengan menggunakan:
+                    window.location.href = "/login";
+                }
+                }
+
+                function checkUserLoggedIn() {
+                // Fungsi ini harus mengembalikan nilai true atau false
+                // Berdasarkan apakah pengguna sudah login atau belum
+                // Anda perlu mengimplementasikan logika ini sesuai dengan kebutuhan Anda
+                // Misalnya, Anda dapat memeriksa apakah ada token otentikasi yang valid tersimpan di lokal storage
+                // atau apakah sesi login aktif pada server, dll.
+                // Contoh sederhana:
+                var isLoggedIn = localStorage.getItem('isLoggedIn'); // Anda perlu mengatur nilai ini saat pengguna berhasil login
+
+                return isLoggedIn === 'true';
+                }
+            </script> -->
+
+            <i class="bi bi-list mobile-nav-toggle"></i>
+
           </nav><!-- .navbar -->
           <!-- <a href="#book-a-table" class="book-a-table-btn scrollto d-none d-lg-flex">Book a table</a> -->
           <ul class="navbar-nav ms-auto">

@@ -2,6 +2,7 @@
 
 <head>
     <link href="{{asset('css/login.css')}}" rel="stylesheet">
+    <title>Login | Farhan Catering</title>
 </head>
 @section('content')
 <div id="main-wrapper">

@@ -34,10 +34,10 @@
                 <td style="border: none">
                     <h2 style="font-family: 'Roboto Flex', sans-serif; font-weight: bolder">LAPORAN PEMESANAN</h2>
                     <h3 style="margin-top: -20px; font-family: 'Roboto Flex', sans-serif; color: #858796">FARHAN CATERING</h3>
-                    <div style="padding-left: 50px; margin-top: -20px; font-family: 'Roboto Flex'">
-                        <h5>{{ Auth::user()->name }}</h5>
-                        <h5 style="margin-top: -20px;">{{ Auth::user()->email }}</h5>
-                        <h5 style="margin-top: -20px;">{{ Auth::user()->telepon }}</h5>
+                    <div style="padding-left: 20px; margin-top: -20px; font-family: 'Roboto Flex'">
+                        <h5>KOST FARIDA, Jl. Warinoi III No.10, Bunulrejo, Kec. Blimbing</h5>
+                        <h5 style="margin-top: -20px;">0858-0046-0598</h5>
+                        <h5 style="margin-top: -20px;">Buka Jam : 08.00 - 17.00</h5>
                     </div>
                     <div style="font-family: 'Roboto Flex', sans-serif;">
                         <?php

@@ -23,6 +23,7 @@ class UserController extends Controller
         $user = DB::table('users')->count();
         $produk = DB::table('produks')->count();
         $pesanans = DB::table('pesanans')->count();
+        $laporan = DB::table('pesanans')->where('status', '=', 'selesai')->count();
         $income = DB::table('pesanans')
             ->selectRaw('SUM(totalHarga)AS income')
             ->value('income');
@@ -37,7 +38,7 @@ class UserController extends Controller
             ->orderBy('Bulan')
             ->get();
         // dd($dataPemasukan);
-        return view('admin.dashboard', compact('user', 'produk', 'income', 'pemasukan', 'dataPemasukan', 'pesanans'));
+        return view('admin.dashboard', compact('user', 'produk', 'income', 'pemasukan', 'dataPemasukan', 'pesanans', 'laporan'));
     }
 
     public function login(Request $request)

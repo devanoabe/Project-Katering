@@ -7,9 +7,8 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Farhan Catering') }}</title>
-
     <!-- Fonts -->
+    <link rel="icon" href="{{ asset('assets/img/undraw_posting_photo.svg') }}">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     <link href="{{asset('css/login.css')}}" rel="stylesheet">

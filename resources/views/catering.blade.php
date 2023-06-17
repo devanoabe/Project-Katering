@@ -42,7 +42,7 @@
         </button>
       </div>
       <div class="modal-body img" style="justify-content: center; align-items: center;">
-        <img src="../assets/img/logo.png" style="width: 500px; height: auto;">
+        <img src="../assets/img/katering.png" style="width: 472px; height: auto;">
         <p style="text-align: center; color: red;">
           *Untuk Layanan Pengiriman dapat melakukan konfirmasi
         </p>

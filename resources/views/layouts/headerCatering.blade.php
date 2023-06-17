@@ -4,8 +4,8 @@
 
           <!-- <h1 class="logo me-auto me-lg-0"><a href=>Farhan Catering</a></h1> -->
           <!-- Uncomment below if you prefer to use an image logo -->
-          <a href="{{ route('home.welcome') }}" class="logo me-auto me-lg-0">
-              <img style="width: 180px; height: auto" src="{{ asset('assets/img/logo.png') }}" alt="Logo">
+          <a href="{{ route('home.welcome') }}" class="logo">
+              <img style="width: 120px; height: auto" src="{{ asset('assets/img/logo.png') }}" alt="Logo">
           </a>
 
 

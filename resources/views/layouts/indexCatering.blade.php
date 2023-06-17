@@ -4,13 +4,13 @@
 <head>
 <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Restaurantly Bootstrap Template - Index</title>
+  <title>Farhan Catering</title>
+  <link rel="icon" href="{{ asset('assets/img/logo-title.png') }}">
   <meta content="" name="description">
   <meta content="" name="keywords">
   <script src="https://kit.fontawesome.com/4664a9073d.js" crossorigin="anonymous"></script>
 
   <!-- Favicons -->
-  <link href="{{asset('assets/template-user/assets/img/favicon.png')}}" rel="icon">
   <link href="{{asset('assets/template-user/assets/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->

@@ -17,14 +17,48 @@
             <p>{{$p->deskripsi}}</p>
             <p>Rp. {{$p->hargaProduk}}</p>
           </div>
+          @guest
+          @if (Route::has('login'))
+          <div class="button" data-toggle="modal" data-target="#login">
+            <span style="margin-right:12px;"><i class="fa-solid fa-basket-shopping"></i></span> Pesan Sekarang
+          </div>
+          @endif
+          @else
           <div class="button" id="pesanSekarang" data-toggle="modal" data-target="#pesan" data-produk-id="{{ $p->idProduk }}" data-produk-nama="{{ $p->namaProduk }}" data-produk-harga="{{ $p->hargaProduk }}">
             <span style="margin-right:12px;"><i class="fa-solid fa-basket-shopping"></i></span> Pesan Sekarang
           </div>
+          @endguest
         </div>
       </div>
     </li>
     @endforeach
   </ul>
+</div>
+
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close align-items-end" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <img src="../images/lg.png" class="mx-auto d-block" style="max-width: 30%; height: auto;">
+          <h3 style="text-align: center; color: black; font-weight: bolder; padding-top: 10px">
+              Login terlebih dahulu!
+          </h3>
+          <p style="text-align: center; color: black; padding-left: 40px; padding-right: 40px; font-size: 12px">
+              Maaf, untuk melakukan pemesanan Anda harus login terlebih dahulu. Silakan login menggunakan akun Anda atau daftar jika belum memiliki akun
+          </p>
+          <div class="center text-center">
+            <button style="background-color: black;" type="button" class="btn">
+                <a style="color: white" href="{{ route('login') }}">{{ __('Login') }}</a>
+            </button>
+          </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="modal fade" id="pesanModal" tabindex="-1" role="dialog" aria-labelledby="exampleModelCenterTitle" aria-hidden="true">
@@ -42,7 +76,7 @@
         </button>
       </div>
       <div class="modal-body img" style="justify-content: center; align-items: center;">
-        <img src="../assets/img/katering.png" style="width: 472px; height: auto;">
+        <img src="../assets/img/katering.png" class="mx-auto d-block" style="max-width: 100%; height: auto;">
         <p style="text-align: center; color: red;">
           *Untuk Layanan Pengiriman dapat melakukan konfirmasi
         </p>
@@ -59,7 +93,7 @@
             </div>
             <div class="col-6 text-right">
               <button type="submit" class="btn w-100 sbt">
-                <a style="color: white" href="https://wa.me/6281339059398">
+                <a style="color: white" href="https://wa.me/6285800460598">
                   <i style="font-size:18px; margin-right: 8px" class="fa fa-whatsapp"></i>Hubungi
                 </a>
               </button>

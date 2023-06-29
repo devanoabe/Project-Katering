@@ -5,7 +5,7 @@
 <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Farhan Catering</title>
-  <link rel="icon" href="{{ asset('assets/img/logo-title.png') }}">
+  <link rel="icon" href="{{ asset('assets/img/logo-fh.png') }}">
   <meta content="" name="description">
   <meta content="" name="keywords">
   <script src="https://kit.fontawesome.com/4664a9073d.js" crossorigin="anonymous"></script>

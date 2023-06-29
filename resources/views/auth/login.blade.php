@@ -50,14 +50,12 @@
                                             </button>
                                         </div>
 
-                                        <div class="d-flex justify-content-center">
-                                            @if (Route::has('password.request'))
-                                            <a class="btn btn-link btn-forget" href="{{ route('password.request') }}">
-                                                {{ __('Forgot Your Password?') }}
+                                        <div class="d-flex justify-content-center mt-4">
+                                            @if (Route::has('register'))
+                                            <a class="nav-link" href="{{ route('register') }}">{{ __('Belum Punya Akun?') }}
                                             </a>
                                             @endif
                                         </div>
-
 
 
                                     </form>

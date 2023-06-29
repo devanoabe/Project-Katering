@@ -12,6 +12,16 @@
     border: none;
     border-radius: 15px;
   }
+
+  .price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    text-align: center;
+    line-height: 1;
+    padding: 8px;
+  }
   
   .text-suc {
     background-color: #8aff8a;
@@ -70,20 +80,99 @@
 
   .tgl-p{
     color: rgb(255, 255, 255); 
-    width: 30%;
-    padding-top: 10px; 
-    padding-bottom: 10px;
+    padding-top: 7px; 
+    padding-bottom: 7px;
+    padding-left: 12px;
+    padding-right: 12px;
     background-color: #5360ff;
     border-radius: 10px;
+    font-size: 14px;
   }
 
   .tgl-pp{
     color: rgb(255, 255, 255); 
-    width: 30%;
-    padding-top: 10px; 
-    padding-bottom: 10px;
+    padding-top: 7px; 
+    padding-bottom: 7px;
+    padding-left: 12px;
+    padding-right: 12px;
     background-color: #cda45e;
     border-radius: 10px;
+    font-size: 14px;
   }
 
+  @media screen and (max-width: 767px) {
+    .judul {
+      font-size: 30px;
+      text-align: center;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .card {
+      border-radius: 0;
+    }
+    .icon {
+      margin-top: 10px;
+    }
+    .tgl-p{
+      font-size: 12px;
+    }
+    .tgl-pp{
+      font-size: 12px;
+    }
+    .tul p{
+      font-size: 12px;
+    }
+    th{
+      font-size: 12px;
+      text-align: center;
+      align-items: center;
+    }
+    .pro p{
+      font-size: 12px;
+    }
+    .jum p{
+      font-size: 12px;
+    }
+    .text-suc {
+      background-color: #8aff8a;
+      font-size: 10px;
+      padding-left: 8px;
+      padding-right: 8px;
+      padding-top: 3px;
+      padding-bottom: 3px;
+      color: #2d9734;
+      font-weight: bolder;
+      border: none;
+      border-radius: 15px;
+    }
+    .text-dan {
+      background-color: rgb(255, 255, 0);
+      font-size: 10px;
+      padding-left: 8px;
+      padding-right: 8px;
+      padding-top: 3px;
+      padding-bottom: 3px;
+      color: rgb(164, 154, 13);
+      font-weight: bolder;
+      border: none;
+      border-radius: 15px;
+    }
+    .tot p{
+      font-size: 12px;
+      font-weight: bolder;
+    }
+
+    .tgl-p{
+      color: rgb(255, 255, 255); 
+      border-radius: 10px;
+      font-size: 10px;
+    }
   
+    .tgl-pp{
+      color: rgb(255, 255, 255); 
+      border-radius: 10px;
+      font-size: 10px;
+    }
+  }
+

@@ -83,6 +83,13 @@
                                             </button>
                                         </div>
 
+                                        <div class="d-flex justify-content-center mt-4">
+                                            @if (Route::has('login'))
+                                            <a class="nav-link" href="{{ route('login') }}">{{ __('Sudah Punya Akun?') }}
+                                            </a>
+                                            @endif
+                                        </div>
+
                                     </form>
                                 </div>
 

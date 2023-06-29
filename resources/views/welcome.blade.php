@@ -1,7 +1,8 @@
 @extends('layouts.indexCatering')
-<!DOCTYPE html>
-<html lang="en">
 
+<head>
+<link rel="icon" href="{{ asset('assets/img/logo-fh.png') }}">
+</head>
 @section('content')
 
 <body>
@@ -17,9 +18,6 @@
             <a href="{{ route('home.catering')}}" class="btn-menu animated fadeInUp scrollto">Our Menu</a>
           </div>
         </div>
-        <div class="col-lg-4 d-flex align-items-center justify-content-center position-relative" data-aos="zoom-in" data-aos-delay="200">
-          <a href="https://www.youtube.com/watch?v=GlrxcuEDyF8" class="glightbox play-btn"></a>
-        </div>
 
       </div>
     </div>
@@ -34,7 +32,7 @@
         <div class="row">
           <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="100">
             <div class="about-img">
-              <img src="assets/img/about.jpg" alt="">
+              <img src="assets/img/cat.jpg" alt="">
             </div>
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
@@ -208,14 +206,7 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>Restaurantly</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/restaurantly-restaurant-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        &copy; Farhan Catering
       </div>
     </div>
   </footer><!-- End Footer -->
